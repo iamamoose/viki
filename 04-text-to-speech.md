@@ -141,7 +141,7 @@ You can also clone the whole voice and just edit the JSON from `en-us` to `en-gb
 
 ### The HUMF fix
 
-espeak says "hmph" and "baka" badly. Rather than fork the container, the [LLM system prompt](03-processing.md#adding-an-llm--google-gemini) rewrites them: **"hmph" → "humf"**, which comes out as a passable *HUMPH!*
+espeak says "hmph" and "baka" badly. Rather than fork the container to add custom rules for them, the [LLM system prompt](03-processing.md#adding-an-llm--google-gemini) rewrites them: no need for baka, and **"hmph" → "humf"**, which comes out as a passable *HUMPH!*
 
 ## Links
 
