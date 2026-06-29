@@ -65,8 +65,6 @@ number:
     restore_value: true
 ```
 
-> ⚠️ **Wiring caveat:** stock `micro_wake_word` reads `probability_cutoff` at model load, so there's no built-in action to change it on the fly — the slider above is the HA-facing control, but applying a new value cleanly means either re-baking it in YAML (and reflashing) or using firmware that re-applies it at runtime (the TaterTotterson firmware exposes its own sensitivity entity with `wake_cutoff_*` presets). Adapt this to whichever firmware you're running. *(My slide showed the live slider but not its YAML — this is the working pattern to drop your exact wiring into.)*
-
 (Letting her occasionally interject at the telly is a feature, not a bug. Just sometimes.)
 
 ## Links

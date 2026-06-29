@@ -266,8 +266,6 @@ Safety:
 
 Gemini alone only knows what's in the model or in your home. To let it look things up on the web, enable the **"Enable Google Search tool"** option in the [Google Generative AI integration](https://www.home-assistant.io/integrations/google_generative_ai_conversation/#enable-google-search-tool) (Home Assistant docs).
 
-> ⚠️ The "little more work" bit: due to an API limitation, the Google Search tool **can't be combined with Home Assistant control** (function calling) — enable both and the request fails with `400 INVALID_ARGUMENT`. The documented workaround is to add a **second** Gemini conversation agent with *only* Google Search enabled (no Assist control), then expose a **script** that calls that search-only agent so your main voice assistant can hand off web queries to it. Full steps are in the HA docs linked above.
-
 Latency: model lookups ~1–2 s; web lookups ~4–6 s.
 
 **Cost:** I set a **£5/month** cap; in practice it lands around **£1–2/month** (3 months were free credits to start). Token usage spikes when you're actively building and drops when you're on holiday.

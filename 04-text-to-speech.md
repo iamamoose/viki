@@ -150,9 +150,7 @@ espeak says "hmph" and "baka" badly. Rather than fork the container, the [LLM sy
 | Qwen3-TTS — voice design | <https://github.com/QwenLM/Qwen3-TTS> |
 | IndexTTS2 — voice cloning + expression | <https://github.com/index-tts/index-tts> |
 | TextyMcSpeechy — Piper training | <https://github.com/domesticatedviking/TextyMcSpeechy> |
-| TextyMcSpeechy — using custom voices on HA OS | <https://github.com/domesticatedviking/TextyMcSpeechy/blob/main/docs/using_custom_voices_in_home_assistant_os.md> |
 | Piper add-on docs (naming + `/share/piper`) | <https://github.com/home-assistant/addons/blob/master/piper/DOCS.md> |
-| `mhm` wake sound | <https://esoom.com/viki/mhm.flac> |
 
 ---
 

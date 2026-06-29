@@ -36,7 +36,6 @@ You can run Azure Speech-to-Text as a Home Assistant add-on yourself, over the W
 
 - Add-on repository (add this under **Settings → Add-ons → ⋮ → Repositories**): <https://github.com/hugobloem/homeassistant-addons>
 - The server project / full option reference: <https://github.com/hugobloem/wyoming-microsoft-stt>
-- A good end-to-end walkthrough (STT + TTS + wake word): <https://fixtse.com/blog/azure-tts-stt>
 
 **Create the Azure Speech resource** (once — the same resource works for STT and TTS):
 
@@ -65,7 +64,6 @@ Free, fast, accurate and private — the only catch is you need an internet conn
 |---|---|
 | Wyoming Microsoft STT — add-on repo | <https://github.com/hugobloem/homeassistant-addons> |
 | Wyoming Microsoft STT — server / options | <https://github.com/hugobloem/wyoming-microsoft-stt> |
-| Azure / TTS + STT walkthrough | <https://fixtse.com/blog/azure-tts-stt> |
 | Azure portal (create Speech resource) | <https://portal.azure.com> |
 | Microsoft STT data/privacy policy | [Microsoft Learn](https://learn.microsoft.com/en-gb/azure/ai-foundry/responsible-ai/speech-service/speech-to-text/data-privacy-security) |
 

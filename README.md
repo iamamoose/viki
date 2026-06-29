@@ -39,7 +39,7 @@ The hardware is the easy part: a **Home Assistant Voice PE** (~£60), an **M5Sta
 |---|---|---|---|
 | microWakeWord — `hey_viki` (Voice PE) | Azure STT (Microsoft) | Intents + Blueprints + Automations (HA OS) + LLM (Gemini) | Piper — `viki` voice |
 
-The sweet spot: **mostly local, no local LLM, ~£2/month.** Microsoft for STT is a no-brainer (free, fast, accurate, private). A cloud LLM isn't essential and carries privacy trade-offs, but only the locally-unhandleable bits go to Google, for a couple of quid — I can live with that.
+The sweet spot: **mostly local, no local LLM, ~£2/month.** Microsoft for STT is a no-brainer (free, fast, accurate, private). A cloud LLM isn't essential and carries privacy trade-offs, but only the locally-unhandleable bits go to Google, for a couple of quid a month. I can live with that.
 
 **Character arc:** started **tsundere** (cold, prickly — *"I-it's not like I wanted to help you"*), experimenting with **deredere** (warmer, more helpful — it's a one-word prompt change). The trade-off: deredere keeps inventing pet names (sweetie, poppet) for everyone, since she can't yet tell who's speaking. Sessions are short and she doesn't remember across them — this is a fun voice assistant, not a companion.
 
