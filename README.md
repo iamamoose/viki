@@ -21,7 +21,7 @@ Home Assistant's voice stack has four stages. The whole talk is just replacing e
 
 The hardware is the easy part: a **Home Assistant Voice PE** (~£60), an **M5Stack ATOM Echo**, or the **AtomS3R "pyramid"** — all ESP32s running ESPHome with a mic array, speaker, buttons and LEDs. They work out of the box. They're also boring. It's all open source, so we just take over the bits we want.
 
-![The three voice assistants: Home Assistant Voice PE (top-left), M5Stack ATOM Echo (the small cube), and the AtomS3R + Atomic Echo Base in a pyramid case (right)](img/hardware.png)
+![The three voice assistants: Home Assistant Voice PE (top-left), M5Stack ATOM Echo (the small cube), and the AtomS3R + Atomic Echo Base in a pyramid case (right)](./hardware.png)
 
 ### Where to buy
 
