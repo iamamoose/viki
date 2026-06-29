@@ -1,6 +1,6 @@
 # 4. Text-to-Speech — a custom voice for VIKI_
 
-[← Processing](03-processing.md) · [Back to README](../README.md)
+[← Processing](03-processing.md) · [Back to README](./README.md)
 
 ---
 

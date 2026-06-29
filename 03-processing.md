@@ -1,6 +1,6 @@
 # 3. Processing — give her a personality
 
-[← Speech-to-Text](02-speech-to-text.md) · [Back to README](../README.md) · Next: [Text-to-Speech →](04-text-to-speech.md)
+[← Speech-to-Text](02-speech-to-text.md) · [Back to README](./README.md) · Next: [Text-to-Speech →](04-text-to-speech.md)
 
 ---
 
