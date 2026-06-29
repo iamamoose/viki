@@ -43,18 +43,4 @@ The sweet spot: **mostly local, no local LLM, ~£2/month.** Microsoft for STT is
 
 **Character arc:** started **tsundere** (cold, prickly — *"I-it's not like I wanted to help you"*), experimenting with **deredere** (warmer, more helpful — it's a one-word prompt change). The trade-off: deredere keeps inventing pet names (sweetie, poppet) for everyone, since she can't yet tell who's speaking. Sessions are short and she doesn't remember across them — this is a fun voice assistant, not a companion.
 
----
-
-## Links
-
-| What | Where |
-|---|---|
-| This repo / notes | <https://codeberg.org/esoom/viki> |
-| Qwen3-TTS (voice design) | <https://github.com/QwenLM/Qwen3-TTS> |
-| IndexTTS2 (voice cloning + expression) | <https://github.com/index-tts/index-tts> |
-| TextyMcSpeechy (Piper training) | <https://github.com/domesticatedviking/TextyMcSpeechy> |
-| MekaHime (the fully-local 3×3090 waifu rig) | YouTube: @MekaHime |
-| `mhm` wake sound | <https://esoom.com/viki/mhm.flac> |
-| Contact | mark@esoom.com |
-
-*Built by joining a lot of existing pieces together — I didn't find anything else that went quite this far. Questions welcome.*
+*Built by joining a lot of existing pieces together — I didn't find anything else that went quite this far. Questions welcome mark@esoom.com.*
