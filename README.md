@@ -1,3 +1,60 @@
-# viki
+# VIKI_ — a mostly-local, mildly judgemental home assistant
 
-EMFCamp 2026 viki home assistant personality
+> Companion notes for the EMF Camp 2026 talk *"Building a mostly-local, mildly judgemental home assistant (aka VIKI_'s origin story)"*.
+
+This is the story (and the links, configs and bodges) behind replacing Alexa with a custom-voiced, slightly tsundere Home Assistant voice personality — kept local and cheap where possible, without local LLMs.
+
+If you were in the room: thanks for coming. Everything I waved at on slides is collected here so you can actually build your own. Questions → **mark@esoom.com**.
+
+---
+
+## The pipeline
+
+Home Assistant's voice stack has four stages. The whole talk is just replacing each one with something better (or at least funnier). Each stage has its own page:
+
+| Stage | Default | What I did | Page |
+|---|---|---|---|
+| **Wakeword** | microWakeWord (ESPHome) | Trained my own `hey_viki` | [docs/01-wakeword.md](docs/01-wakeword.md) |
+| **Speech-to-Text** | faster-whisper (tiny-int8) | Switched to self-hosted Azure STT | [docs/02-speech-to-text.md](docs/02-speech-to-text.md) |
+| **Processing** | HA intents | Personality automations + a Gemini LLM | [docs/03-processing.md](docs/03-processing.md) |
+| **Text-to-Speech** | Piper (default voice) | Trained a custom anime-ish `viki` voice | [docs/04-text-to-speech.md](docs/04-text-to-speech.md) |
+
+The hardware is the easy part: a **Home Assistant Voice PE** (~£60), an **M5Stack ATOM Echo**, or the **AtomS3R "pyramid"** — all ESP32s running ESPHome with a mic array, speaker, buttons and LEDs. They work out of the box. They're also boring. It's all open source, so we just take over the bits we want.
+
+![The three voice assistants: Home Assistant Voice PE (top-left), M5Stack ATOM Echo (the small cube), and the AtomS3R + Atomic Echo Base in a pyramid case (right)](img/hardware.png)
+
+### Where to buy
+
+| Device | Official / store | Notes |
+|---|---|---|
+| **Home Assistant Voice PE** | [home-assistant.io/voice-pe](https://www.home-assistant.io/voice-pe/) (routes to regional shops) · UK: [The Pi Hut](https://thepihut.com/products/home-assistant-voice-preview-edition), [Pimoroni](https://shop.pimoroni.com/en-us/products/home-assistant-voice) | ~£60 / $59 MSRP; plug-in, no assembly |
+| **M5Stack ATOM Echo** | [M5Stack store](https://shop.m5stack.com/products/atom-echo-smart-speaker-dev-kit) · UK: [The Pi Hut](https://thepihut.com/products/atom-echo-smart-speaker-dev-kit) | The "$13 voice assistant" — [HA guide](https://www.home-assistant.io/voice_control/thirteen-usd-voice-remote/) |
+| **M5Stack AtomS3R + Atomic Echo Base** (the "pyramid") | [AtomS3R-AI Chatbot kit](https://shop.m5stack.com/products/atoms3r-ai-chatbot-kit-8mb-psram) · [M5 HA setup guide](https://docs.m5stack.com/en/homeassistant/voice_assistant/atoms3r_with_atomic_echo_base_voice_assistant) | AtomS3R has the 0.85″ screen; the pyramid is a case |
+
+---
+
+## VIKI_ as of June 2026
+
+| Wakeword | Speech-to-Text | Personality | Text-to-Speech |
+|---|---|---|---|
+| microWakeWord — `hey_viki` (Voice PE) | Azure STT (Microsoft) | Intents + Blueprints + Automations (HA OS) + LLM (Gemini) | Piper — `viki` voice |
+
+The sweet spot: **mostly local, no local LLM, ~£2/month.** Microsoft for STT is a no-brainer (free, fast, accurate, private). A cloud LLM isn't essential and carries privacy trade-offs, but only the locally-unhandleable bits go to Google, for a couple of quid — I can live with that.
+
+**Character arc:** started **tsundere** (cold, prickly — *"I-it's not like I wanted to help you"*), experimenting with **deredere** (warmer, more helpful — it's a one-word prompt change). The trade-off: deredere keeps inventing pet names (sweetie, poppet) for everyone, since she can't yet tell who's speaking. Sessions are short and she doesn't remember across them — this is a fun voice assistant, not a companion.
+
+---
+
+## Links
+
+| What | Where |
+|---|---|
+| This repo / notes | <https://codeberg.org/esoom/viki> |
+| Qwen3-TTS (voice design) | <https://github.com/QwenLM/Qwen3-TTS> |
+| IndexTTS2 (voice cloning + expression) | <https://github.com/index-tts/index-tts> |
+| TextyMcSpeechy (Piper training) | <https://github.com/domesticatedviking/TextyMcSpeechy> |
+| MekaHime (the fully-local 3×3090 waifu rig) | YouTube: @MekaHime |
+| `mhm` wake sound | <https://esoom.com/viki/mhm.flac> |
+| Contact | mark@esoom.com |
+
+*Built by joining a lot of existing pieces together — I didn't find anything else that went quite this far. Questions welcome.*
