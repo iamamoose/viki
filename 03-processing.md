@@ -270,7 +270,7 @@ Latency: model lookups ~1–2 s; web lookups ~4–6 s.
 
 **Cost:** I set a **£5/month** cap; in practice it lands around **£1–2/month** (3 months were free credits to start). Token usage spikes when you're actively building and drops when you're on holiday.
 
-![Google AI Studio API request usage — daily request bars and success-rate line over a few months; you can see the heavy build period and the holiday gap](../img/cost-graph.png)
+![Google AI Studio API cost](./cost-graph.png)
 
 Before my free credits ran out (late May) it cost nothing; with a **£5/month** spend cap set as a safety net, real spend has stayed around **a quid or two**.
 
