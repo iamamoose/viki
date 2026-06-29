@@ -19,7 +19,7 @@ Home Assistant's voice stack has four stages. The whole talk is just replacing e
 | **Processing** | HA intents | Personality automations + a Gemini LLM | [./03-processing.md](./03-processing.md) |
 | **Text-to-Speech** | Piper (default voice) | Trained a custom anime-ish `viki` voice | [./04-text-to-speech.md](./04-text-to-speech.md) |
 
-The hardware is the easy part: a **Home Assistant Voice PE** (~£60), an **M5Stack ATOM Echo**, or the **AtomS3R "pyramid"** — all ESP32s running ESPHome with a mic array, speaker, buttons and LEDs. They work out of the box. They're also boring. It's all open source, so we just take over the bits we want.
+The hardware is the easy part: a **Home Assistant Voice PE** (~£60), an **M5Stack ATOM Echo**, or the **AtomS3R "pyramid"** — all ESP32s running ESPHome with a mic array, speaker, buttons and LEDs. They work out of the box. It's all open source, so we just take over any bits we want to change.
 
 ![The three voice assistants: Home Assistant Voice PE (top-left), M5Stack ATOM Echo (the small cube), and the AtomS3R + Atomic Echo Base in a pyramid case (right)](./hardware.png)
 
