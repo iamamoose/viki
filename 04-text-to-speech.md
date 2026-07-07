@@ -8,9 +8,9 @@ Piper does local, phoneme-based TTS — fast enough even on a Pi. There are heav
 
 You can also **train your own**. Some people have done the Enterprise computer or Commander Data — we watch a lot of anime, so we wanted something more endearing: a custom anime-style voice.
 
-## The chain (runs backwards from what Piper needs)
+## The steps
 
-> Piper needs phonemes ← train a model on hundreds of sample phrases ← in a cloned, expression-tweaked voice ← generated from a designed voice ← from a prompt (written by an LLM).
+A few stages, running forward: **design** a voice from a text prompt, **clone** it and set its expression, **generate** a couple of hundred sample phrases in that voice, then **train** a Piper model on them and **install** it in Home Assistant.
 
 ### Step 1 — Design the voice — Qwen3-TTS
 **<https://github.com/QwenLM/Qwen3-TTS>**

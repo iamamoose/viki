@@ -4,7 +4,7 @@
 
 ---
 
-The three default wakewords ("Hey Mycroft / Hey Jarvis / Okay Nabu") exist because wakeword training is hard to do without false positives — a lot of effort goes into making sure random TV noise doesn't set them off. **microWakeWord** runs locally on the ESP32, listening all the time. But you *can* train your own.
+There are only three default wakewords ("Hey Mycroft / Hey Jarvis / Okay Nabu"), because it's genuinely hard to get a model that works across all accents while staying under a defined level of acceptable false positives — a lot of effort goes into making sure random TV noise doesn't set them off. **microWakeWord** runs locally on the ESP32, listening all the time. But you *can* train your own, from a set of recordings of the wake word plus a set of background-noise recordings.
 
 ## Tooling — TaterTotterson
 
