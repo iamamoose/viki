@@ -69,38 +69,61 @@ mode: single
 Reads the weather plugin + outside temp and editorialises. (In Glasgow, "overcast and windy" would be valid most of the time.)
 
 ```yaml
-alias: voice - good morning
+
+alias: voice good morning
+description: ""
 triggers:
   - trigger: conversation
     command: good morning
 conditions: []
 actions:
   - set_conversation_response: >
-      {% set condition = states('weather.pirateweather') | default('unknown') %}
+      {% set condition = states('weather.pirateweather') | default('unknown')
+      %} 
+
       {% set raw_temp = states('sensor.outside_temp') | float(default=none) %}
-      {% set temp = (raw_temp | round(0) | int) if raw_temp is not none else none %}
+
+      {% set temp = (raw_temp | round(0) | int) if raw_temp is not none else
+      none %}
+
       {% set weather_comment %}
+        [[.]]
         {% if condition in ['rainy', 'pouring'] %}
-          It's raining outside. What did you expect.
+          It's raining outside. 
+          What did you expect.
         {% elif condition in ['cloudy', 'overcast'] %}
-          It's rather grey outside. How fitting.
+          It's rather grey outside.
+          How fitting.
         {% elif condition in ['sunny', 'clear'] %}
-          It's sunny. You best make the most of it.
+          It's sunny.
+          You best make the most of it.
+        {% else %}
         {% endif %}
       {% endset %}
+
       {% set temp_comment %}
         {% if temp is number %}
           {% if temp < 5 %}
-            Also, it's {{ temp }}°. That's objectively cold. Wear a coat.
+            Also, it’s {{ temp }}°. That’s objectively cold. Wear a coat.
           {% elif temp > 18 %}
-            And it's {{ temp }}°. Try not to melt.
+            And it’s {{ temp }}°. Try not to melt.
           {% else %}
-            It's {{ temp }}°. Perfectly tolerable I suppose.
+            It’s {{ temp }}°. Perfectly tolerable I suppose.
           {% endif %}
+        {% else %}
+          I would comment on the temperature, but someone hasn’t configured it properly.
         {% endif %}
       {% endset %}
-      {{ weather_comment }} {{ temp_comment }}
-mode: single
+
+
+      {% set responses = [
+              "Good morning! " ~ weather_comment ~ " " ~ temp_comment,
+              "Oh; You're awake! " ~ weather_comment ~ " " ~ temp_comment,
+              "Morning; I already checked the weather! " ~ weather_comment ~ " " ~ temp_comment,
+              "Good morning! Systems nominal; " ~ weather_comment ~ " " ~ temp_comment
+            ] %}
+            
+            {{ responses | random }}
 ```
 
 ### Good night — kill the lights, sign off
