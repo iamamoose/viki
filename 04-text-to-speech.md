@@ -19,6 +19,8 @@ Used to use ElevenLabs; Qwen3-TTS does the job now. Ask ChatGPT for a voice-desi
 
 It's a *voice-design* model: no seed, a different voice every run, so keep generating until you like one — **and keep the WAV**, you'll clone it next.
 
+> 🐍 Full script: [`scripts/voice_design.py`](./scripts/voice_design.py).
+
 ```python
 import torch, soundfile as sf
 from qwen_tts import Qwen3TTSModel
@@ -48,7 +50,7 @@ Clones your designed voice and lets you dial the **expression**, which is great.
 
 ### Step 3 — Build the training dataset
 
-Training needs a couple of hundred phrases + audio for each. There's a sample `metadata.csv` (pipe-delimited `id|text`); I added Home-Assistant-specific lines:
+Training needs a couple of hundred phrases + audio for each. There's a sample `metadata.csv` (pipe-delimited `id|text`) — mine is [`scripts/metadata.csv`](./scripts/metadata.csv), the usual phonetically-balanced sentences plus Home-Assistant-specific lines I added:
 
 ```text
 1|The quick brown fox jumps over the lazy dog.
@@ -63,9 +65,9 @@ Training needs a couple of hundred phrases + audio for each. There's a sample `m
 176|You have seven items on your shopping list.
 ```
 
-A small Python script generates all ~176 WAVs via IndexTTS in a few minutes.
+A small Python script — [`scripts/generate_samples.py`](./scripts/generate_samples.py) — generates all ~176 WAVs via IndexTTS in a few minutes, cloning the designed voice at *melancholic + calm* expression.
 
-> ⚠️ **You must listen to every one.** If the audio doesn't match the text, training fails — and that takes far longer than generating them. Two regenerated wrong the first time. IndexTTS also sometimes leaves a gap at the start of a sentence that turns into. Strange. Gaps. In your. Output. — a second tiny Python script trims those.
+> ⚠️ **You must listen to every one.** If the audio doesn't match the text, training fails — and that takes far longer than generating them. Two regenerated wrong the first time. IndexTTS also sometimes leaves a gap at the start of a sentence that turns into. Strange. Gaps. In your. Output. — a second tiny Python script, [`scripts/trim_silence.py`](./scripts/trim_silence.py), trims those.
 
 ### Step 4 — Train + install — TextyMcSpeechy
 **<https://github.com/domesticatedviking/TextyMcSpeechy>**
@@ -151,6 +153,7 @@ espeak says "hmph" and "baka" badly. Rather than fork the container to add custo
 | IndexTTS2 — voice cloning + expression | <https://github.com/index-tts/index-tts> |
 | TextyMcSpeechy — Piper training | <https://github.com/domesticatedviking/TextyMcSpeechy> |
 | Piper add-on docs (naming + `/share/piper`) | <https://github.com/home-assistant/addons/blob/master/piper/DOCS.md> |
+| Glue scripts + `metadata.csv` (this repo) | [`./scripts/`](./scripts/) |
 
 ---
 

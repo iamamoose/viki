@@ -4,7 +4,7 @@
 
 This is the story (and the links, configs and bodges) behind replacing Alexa with a custom-voiced, slightly tsundere Home Assistant voice personality — kept local and cheap where possible, without local LLMs.
 
-If you were in the room: thanks for coming. Everything I waved at on slides is collected here so you can actually build your own. Questions → **mark@esoom.com**.
+If you were in the room: thanks for coming. Everything I waved at on slides is collected here so you can actually build your own — including the few [glue Python scripts](./scripts/) that hold it all together. Questions → **mark@esoom.com**.
 
 ---
 

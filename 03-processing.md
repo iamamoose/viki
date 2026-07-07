@@ -20,7 +20,7 @@ Many requests are the same few things — lights on/off, heating, timers — so 
 
 ### Kettle — random reply + live water temp
 
-Note the trigger deliberately accepts the common STT mishears (`Boil|Oil`, `kettle|cattle`) we saw in the [STT quiz](02-speech-to-text.md):
+These are the commands for our **WeeKett** wifi kettle. Add it in the UI or paste the YAML. Note the trigger deliberately accepts the common STT mishears (`Boil|Oil`, `kettle|cattle`) we saw in the [STT quiz](02-speech-to-text.md):
 
 ```yaml
 alias: Voice - tea
@@ -97,12 +97,10 @@ actions:
           {% else %}
             It's {{ temp }}°. Perfectly tolerable I suppose.
           {% endif %}
-        {% else %}
-          # ⚠️ slide truncated here — the else branch + final
-          # "{{ weather_comment }} {{ temp_comment }}" assembly were cut off.
-          # Drop in your full version from your HA config.
         {% endif %}
       {% endset %}
+      {{ weather_comment }} {{ temp_comment }}
+mode: single
 ```
 
 ### Good night — kill the lights, sign off
