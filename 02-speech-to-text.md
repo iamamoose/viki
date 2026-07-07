@@ -71,4 +71,4 @@ Free, fast, accurate and private — the only catch is you need an internet conn
 
 ---
 
-[← Wakeword](01-wakeword.md) · [Back to README](../README.md) · Next: [Processing →](03-processing.md)
+[← Wakeword](01-wakeword.md) · [Back to README](./README.md) · Next: [Processing →](03-processing.md)

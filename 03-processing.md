@@ -282,4 +282,4 @@ Before my free credits ran out (late May) it cost nothing; with a **£5/month** 
 
 ---
 
-[← Speech-to-Text](02-speech-to-text.md) · [Back to README](../README.md) · Next: [Text-to-Speech →](04-text-to-speech.md)
+[← Speech-to-Text](02-speech-to-text.md) · [Back to README](./README.md) · Next: [Text-to-Speech →](04-text-to-speech.md)
