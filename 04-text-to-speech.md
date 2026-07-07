@@ -8,6 +8,8 @@ Piper does local, phoneme-based TTS — fast enough even on a Pi. There are heav
 
 You can also **train your own**. Some people have done the Enterprise computer or Commander Data — we watch a lot of anime, so we wanted something more endearing: a custom anime-style voice.
 
+> 🎙️ **Make your own VIKI, not ours.** Honestly, you don't want our VIKI — you want *yours*. Keep running the voice-design script (step 1) until you land on a voice you genuinely love, and train that. That's the whole joy of it: your VIKI ends up unique to you, in a way ours never could be. Everything you need is below — it's an afternoon's work.
+
 ## The steps
 
 A few stages, running forward: **design** a voice from a text prompt, **clone** it and set its expression, **generate** a couple of hundred sample phrases in that voice, then **train** a Piper model on them and **install** it in Home Assistant.
