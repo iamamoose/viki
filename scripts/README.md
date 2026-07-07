@@ -18,12 +18,12 @@ install into the Piper add-on) are covered in
 
 ## metadata.csv
 
-This is a **starter set**, not the exact file used for the shipped voice: the
-nine pangrams from the slide, a run of phonetically-balanced Harvard sentences
-(public domain), and the Home-Assistant-specific lines VIKI actually says
-(numbered 170+ to match the talk). Grow it to ~170–200 lines — more balanced
-coverage of sounds gives a better model. The `id` becomes the WAV filename, so
-gaps in the numbering are fine.
+The actual ~180-line phrase list used to train VIKI: pangrams and
+phonetically-loaded sentences for sound coverage, a pile of everyday questions
+and interjections for natural prosody, and the Home-Assistant-specific lines
+she actually says (170+, including the moose joke and the washing-machine nag).
+The `id` is just the WAV filename, so the odd gap in the numbering doesn't
+matter.
 
 ## Rough order
 
