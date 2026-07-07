@@ -9,8 +9,8 @@ modest GPU (an NVIDIA 3060 here), not on the Home Assistant server.
 |---|---|---|
 | [`voice_design.py`](./voice_design.py) | 1 — design | Renders a sample WAV from a text prompt with **Qwen3-TTS-VoiceDesign**. No seed, so re-run until you like one, then keep the WAV. |
 | [`metadata.csv`](./metadata.csv) | 3 — dataset | Pipe-delimited `id\|text` phrase list the trainer wants. |
-| [`generate_samples.py`](./generate_samples.py) | 3 — dataset | Clones the designed voice into one WAV per `metadata.csv` line with **IndexTTS2**, dialed to *melancholic + calm*. |
-| [`trim_silence.py`](./trim_silence.py) | 3 — dataset | Trims the leading/trailing silence IndexTTS sometimes leaves in. |
+| [`generate_samples.py`](./generate_samples.py) | 3 — dataset | Clones the designed voice into one WAV per `metadata.csv` line with **IndexTTS2**, dialed to *melancholic + calm*, fixed seed. |
+| [`trim_gaps.py`](./trim_gaps.py) | 3 — dataset | Punctuation-aware pass that collapses IndexTTS's spurious mid-utterance gaps while protecting deliberate comma / full-stop pauses. |
 
 Step 2 (clone + set expression) and step 4 (train with **TextyMcSpeechy**, then
 install into the Piper add-on) are covered in
@@ -29,8 +29,8 @@ gaps in the numbering are fine.
 
 ```bash
 python voice_design.py                 # -> voice_design.wav (repeat until happy)
-python generate_samples.py             # metadata.csv -> wavs/*.wav
+python generate_samples.py             # metadata.csv -> <id>.wav for each line
 # ...listen to EVERY wav, regenerate any that don't match the text...
-python trim_silence.py wavs/           # tidy up leading/trailing gaps
-# ...then feed wavs/ + metadata.csv to TextyMcSpeechy to train.
+python trim_gaps.py metadata.csv . trimmed/   # collapse spurious gaps -> trimmed/
+# ...then feed trimmed/ + metadata.csv to TextyMcSpeechy to train.
 ```

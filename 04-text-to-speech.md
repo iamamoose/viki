@@ -67,9 +67,9 @@ Training needs a couple of hundred phrases + audio for each. There's a sample `m
 176|You have seven items on your shopping list.
 ```
 
-A small Python script — [`scripts/generate_samples.py`](./scripts/generate_samples.py) — generates all ~176 WAVs via IndexTTS in a few minutes, cloning the designed voice at *melancholic + calm* expression.
+A small Python script — [`scripts/generate_samples.py`](./scripts/generate_samples.py) — generates all ~176 WAVs via IndexTTS in a few minutes, cloning the designed voice at *melancholic + calm* expression, with a fixed seed so runs are repeatable.
 
-> ⚠️ **You must listen to every one.** If the audio doesn't match the text, training fails — and that takes far longer than generating them. Two regenerated wrong the first time. IndexTTS also sometimes leaves a gap at the start of a sentence that turns into. Strange. Gaps. In your. Output. — a second tiny Python script, [`scripts/trim_silence.py`](./scripts/trim_silence.py), trims those.
+> ⚠️ **You must listen to every one.** If the audio doesn't match the text, training fails — and that takes far longer than generating them. Two regenerated wrong the first time. IndexTTS also leaves gaps that turn into. Strange. Gaps. In your. Output. — `interval_silence=0` and `max_text_tokens_per_segment=200` cut most of them at generation, but I still run a second script, [`scripts/trim_gaps.py`](./scripts/trim_gaps.py), afterwards: it's punctuation-aware, so it collapses the spurious tokenizer pauses while *protecting* the deliberate comma / full-stop ones.
 
 ### Step 4 — Train + install — TextyMcSpeechy
 **<https://github.com/domesticatedviking/TextyMcSpeechy>**
