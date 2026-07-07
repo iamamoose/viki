@@ -6,7 +6,19 @@
 
 By default Home Assistant offers **phrase-to-text** (great for low-end hardware, but limited to token-named phrases) and **speech-to-text**. Since we want to interact with Viki more freely, we use speech-to-text.
 
-The default is **faster-whisper** in a container, with a choice of model — `tiny-int8` is recommended for a Pi 4.
+The default is **faster-whisper** in a container, with a choice of model — `tiny-int8` is recommended for a Pi 4, and `base-int8` is more accurate and okay on a Pi 5.
+
+You can also pay for the optional Home Assistant cloud subscription — a **Microsoft** speech service covering both STT and TTS. Do we need it? Two quick side-quests: accuracy, then speed.
+
+## Accuracy — the "what's that person saying?" quiz
+
+| Phrase | tiny-int8 | base-int8 | azure |
+|---|---|---|---|
+| "Turn on the lights" | Turn on the lights | Turn on the lights | Turn on the lights |
+| "Eleven minute timer" | A loving minute timer | 11 minute timer | 11 minute timer |
+| "Boil the kettle" | Oil the kettle | Boil the cattle | Boil the kettle |
+
+`tiny-int8` barely understands me, and not my (Scottish) wife at all. `base-int8` is closer but still trips on "boil the cattle". Azure gets it right. So the cloud's accurate — but what about speed?
 
 ## Benchmark — *"What is the bedroom temperature?"*
 
@@ -18,17 +30,7 @@ The default is **faster-whisper** in a container, with a choice of model — `ti
 | i7-6700 (tiny-int8) | 0.6 s |
 | **Microsoft / Azure STT** | **0.1 s** |
 
-`tiny-int8` is the default — quick but inaccurate, bad at even simple things. `base-int8` is better but not recommended below a Pi 5, and 1.7 s is annoying when it's *on top of* everything else the pipeline does. The cloud just makes things feel more responsive.
-
-### Accuracy — the "what's that person saying?" quiz
-
-| Phrase | tiny-int8 | base-int8 | azure |
-|---|---|---|---|
-| "Turn on the lights" | Turn on the lights | Turn on the lights | Turn on the lights |
-| "Eleven minute timer" | A loving minute timer | 11 minute timer | 11 minute timer |
-| "Boil the kettle" | Oil the kettle | Boil the cattle | Boil the kettle |
-
-`tiny-int8` barely understands me, and not my (Scottish) wife at all. Azure gets it right.
+As you'd expect, `tiny-int8` is much faster than `base-int8` — but we need `base` for accuracy unless we go cloud, and 1.7 s on a Pi 5 is annoying when it's *on top of* everything else the pipeline does. The cloud wins here too.
 
 ## Self-hosting Microsoft STT (no full HA Cloud subscription)
 
@@ -47,12 +49,12 @@ You can run Azure Speech-to-Text as a Home Assistant add-on yourself, over the W
 
 **Cost / free tier:**
 - The Free F0 tier gives **5 audio hours/month**. Beyond that, Azure charges ~**$0.36/audio hour**.
-- My usage: **~16 minutes over 24 days** — under a minute a day. Nowhere near the cap.
+- My usage: **~16 minutes over 24 days** — about **10% of the free allowance**, under a minute a day. Nowhere near the cap.
 - Set a **£1/month spend cap** as insurance in case something changes or goes wrong.
 
 ### Privacy
 
-Per Microsoft's policy *at time of speaking*: for real-time speech-to-text, audio is processed only in **server memory** with **nothing stored at rest**, and Microsoft **does not retain or store** the data customers provide.
+Per Microsoft's policy *at time of speaking*: for real-time speech-to-text, audio is processed only in **server memory** with **nothing stored at rest**, and Microsoft **does not retain or store** the data customers provide — and **doesn't use it to train AI**.
 
 > 📄 **Microsoft's policy:** [Data, privacy, and security for Speech to text](https://learn.microsoft.com/en-gb/azure/ai-foundry/responsible-ai/speech-service/speech-to-text/data-privacy-security) (Microsoft Learn). Note the wording is specific to **real-time** STT — which is what the HA voice pipeline uses. (Batch transcription, which we don't use, has different storage behaviour.)
 
