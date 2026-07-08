@@ -60,15 +60,6 @@ Per Microsoft's policy *at time of speaking*: for real-time speech-to-text, audi
 
 Free, fast, accurate and private — the only catch is you need an internet connection.
 
-## Links
-
-| What | Where |
-|---|---|
-| Wyoming Microsoft STT — add-on repo | <https://github.com/hugobloem/homeassistant-addons> |
-| Wyoming Microsoft STT — server / options | <https://github.com/hugobloem/wyoming-microsoft-stt> |
-| Azure portal (create Speech resource) | <https://portal.azure.com> |
-| Microsoft STT data/privacy policy | [Microsoft Learn](https://learn.microsoft.com/en-gb/azure/ai-foundry/responsible-ai/speech-service/speech-to-text/data-privacy-security) |
-
 ---
 
 [← Wakeword](01-wakeword.md) · [Back to README](./README.md) · Next: [Processing →](03-processing.md)

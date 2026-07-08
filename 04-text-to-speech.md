@@ -147,16 +147,6 @@ You can also clone the whole voice and just edit the JSON from `en-us` to `en-gb
 
 espeak says "hmph" and "baka" badly. Rather than fork the container to add custom rules for them, the [LLM system prompt](03-processing.md#adding-an-llm--google-gemini) rewrites them: no need for baka, and **"hmph" → "humf"**, which comes out as a passable *HUMPH!*
 
-## Links
-
-| What | Where |
-|---|---|
-| Qwen3-TTS — voice design | <https://github.com/QwenLM/Qwen3-TTS> |
-| IndexTTS2 — voice cloning + expression | <https://github.com/index-tts/index-tts> |
-| TextyMcSpeechy — Piper training | <https://github.com/domesticatedviking/TextyMcSpeechy> |
-| Piper add-on docs (naming + `/share/piper`) | <https://github.com/home-assistant/addons/blob/master/piper/DOCS.md> |
-| Glue scripts + `metadata.csv` (this repo) | [`./scripts/`](./scripts/) |
-
 ---
 
 [← Processing](03-processing.md) · [Back to README](./README.md)

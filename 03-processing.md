@@ -299,8 +299,6 @@ Before my free credits ran out (late May) it cost nothing; with a **£5/month** 
 
 | What | Where |
 |---|---|
-| Google Generative AI integration (HA docs) | <https://www.home-assistant.io/integrations/google_generative_ai_conversation/> |
-| Enable Google Search tool (web lookups) | [HA docs §](https://www.home-assistant.io/integrations/google_generative_ai_conversation/#enable-google-search-tool) |
 | MekaHime (fully-local companion rig) | <https://www.youtube.com/@MekaHime> |
 
 ---

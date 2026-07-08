@@ -75,15 +75,6 @@ select:
 
 (Letting her occasionally interject at the telly is a feature, not a bug. Just sometimes.)
 
-## Links
-
-| What | Where |
-|---|---|
-| microWakeWord trainer — Apple Silicon | <https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon> |
-| microWakeWord trainer — NVIDIA Docker | <https://github.com/TaterTotterson/microWakeWord-Trainer-Nvidia-Docker> |
-| Tater firmware + model assets | <https://github.com/TaterTotterson/microWakeWords> |
-| ESPHome `micro_wake_word` component docs | <https://esphome.io/components/micro_wake_word/> |
-
 ---
 
 [← Back to README](./README.md) · Next: [Speech-to-Text →](02-speech-to-text.md)
