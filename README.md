@@ -2,9 +2,13 @@
 
 > Companion notes for the EMF Camp July 2026 talk *"Building a mostly-local, mildly judgemental home assistant (aka VIKI_'s origin story)"*.
 
+## [Watch the Video] https://media.ccc.de/v/emf2026-88-1-building-a-mostly-local-mildly-judgemental-home-assistant)
+
 This is the story (and the links, configs and bodges) behind replacing Alexa with a custom-voiced, slightly tsundere Home Assistant voice personality — kept local and cheap where possible, without local LLMs.
 
 If you were in the room: thanks for coming. Everything I waved at on slides is collected here so you can actually build your own — including the few [glue Python scripts](./scripts/) that hold it all together. Questions → **mark@esoom.com**.
+
+A few of the samples didn't play on stage, and it turns out these were ones that I saved in 22kHz format. While they play through the speakers and through my HDMI Amp just fine, the HDMI sink used on stage didn't support that format, and a known issue with the Macbook means rather than resample and send a working sample, it just gets dropped.  
 
 ---
 
