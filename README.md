@@ -23,7 +23,7 @@ Home Assistant's voice stack has four stages. The whole talk is just replacing e
 | **Processing** | HA intents | Personality automations + optional Gemini LLM | [./03-processing.md](./03-processing.md) |
 | **Text-to-Speech** | Piper (default voice) | Trained a custom anime `viki` voice | [./04-text-to-speech.md](./04-text-to-speech.md) |
 
-The hardware is the easy part: a **Home Assistant Voice PE** (~£60), an **M5Stack ATOM Echo**, or the **AtomS3R "pyramid"** — all ESP32s running ESPHome with a mic array, speaker, buttons and LEDs. They work out of the box. It's all open source, so we just take over any bits we want to change.
+The hardware is the easy part: a Home Assistant Voice PE (~£60), an M5Stack ATOM Echo, or the AtomS3R "pyramid" — all ESP32s running ESPHome with a mic array, speaker, buttons and LEDs. They work out of the box, and it's all open source, so we just take over the bits we want to change.
 
 ![The three voice assistants: Home Assistant Voice PE (top-left), M5Stack ATOM Echo (the small cube), and the AtomS3R + Atomic Echo Base in a pyramid case (right)](./hardware.png)
 
@@ -43,8 +43,8 @@ The hardware is the easy part: a **Home Assistant Voice PE** (~£60), an **M5Sta
 |---|---|---|---|
 | microWakeWord — `hey_viki` (Voice PE) | Azure STT (Microsoft) | Intents + Blueprints + Automations (HA OS) + LLM (Gemini) | Piper — `viki` voice |
 
-The sweet spot: **mostly local, no local LLM, ~£2/month.** Microsoft for STT is a no-brainer (free, fast, accurate, private). A cloud LLM isn't essential and carries privacy trade-offs, but only the locally-unhandleable bits go to Google, for a couple of quid a month. I can live with that.
+Where it lands: mostly local, no local LLM, about £2 a month. Microsoft for STT is an easy win, being free, fast, accurate and private. A cloud LLM isn't essential and carries privacy trade-offs, but only the bits that can't be handled locally go to Google, for a couple of quid a month. I can live with that.
 
-**Character arc:** started **tsundere** (cold, prickly — *"I-it's not like I wanted to help you"*), experimenting with **deredere** (warmer, more helpful — it's a one-word prompt change). The trade-off: deredere keeps inventing pet names (sweetie, poppet), but at least they're for everyone. LLM Sessions are short and she doesn't remember across them; this is a fun voice assistant, not a companion.
+Character arc: she started tsundere (cold, prickly — *"I-it's not like I wanted to help you"*), and I'm experimenting with deredere (warmer, more helpful, a one-word prompt change). The trade-off is that deredere keeps inventing pet names (sweetie, poppet), but at least they're for everyone. LLM sessions are short and she doesn't remember across them; this is a fun voice assistant, not a companion.
 
 *Built by joining a lot of existing pieces together — I didn't find anything else that went quite this far. Questions welcome mark@esoom.com.*

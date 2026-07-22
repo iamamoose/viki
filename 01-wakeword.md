@@ -4,26 +4,26 @@
 
 ---
 
-There are only three default wakewords ("Hey Mycroft / Hey Jarvis / Okay Nabu"), because it's genuinely hard to get a model that works across all accents while staying under a defined level of acceptable false positives — a lot of effort goes into making sure random TV noise doesn't set them off. **microWakeWord** runs locally on the ESP32, listening all the time. But you *can* train your own, from a set of recordings of the wake word plus a set of background-noise recordings.
+Home Assistant ships with three wakewords: "Hey Mycroft", "Hey Jarvis" and "Okay Nabu". There aren't more because a good wakeword model is hard work. It has to fire for every accent while ignoring the telly, and keeping the false positives down to something sensible takes a lot of tuning. The model, microWakeWord, runs on the ESP32 itself and listens all the time. But you can train your own, given a set of recordings of the wake word and some background noise to train against.
 
 ## Tooling — TaterTotterson
 
-**tatertotterson** has done a lot of work making the training painless — the **microWakeWord Trainer Studio** is a local web UI that walks you through phrase → sample review → train, with prebuilt satellite firmware too:
+tatertotterson has done the hard part. The microWakeWord Trainer Studio is a local web UI that takes you from phrase, through reviewing your samples, to a trained model, and there's prebuilt satellite firmware too:
 
-- **Apple Silicon trainer** (what I used — full GPU/Metal acceleration on an M-series Mac): <https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon>
-- NVIDIA / CUDA Docker trainer (if you've a decent GPU instead): <https://github.com/TaterTotterson/microWakeWord-Trainer-Nvidia-Docker>
-- Firmware + model assets for VoicePE / Satellite1 / ReSpeaker: <https://github.com/TaterTotterson/microWakeWords>
+- Apple Silicon trainer, the one I used, with GPU/Metal acceleration on an M-series Mac: <https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon>
+- NVIDIA / CUDA Docker trainer if you have a decent GPU instead: <https://github.com/TaterTotterson/microWakeWord-Trainer-Nvidia-Docker>
+- Firmware and model assets for VoicePE / Satellite1 / ReSpeaker: <https://github.com/TaterTotterson/microWakeWords>
 
 ## How I did it
 
-- Recorded **~40 samples** of me and my wife saying *"hey Viki"* — a reasonable, distinct name, and the extra "hey" cuts false triggers — plus a set of background-noise / hard-negative recordings.
-- Setup takes a few minutes and pops up a local web UI.
-- Run the trainer and wait. On a MacBook it took **under 2 hours**.
-- Output: a `.json` + a `.tflite` file → drop them somewhere ESPHome can see them (e.g. `/config/models/`, or reference a raw URL).
+- I recorded about 40 samples of me and my wife saying *"hey Viki"*. It's a distinct enough name, and the extra "hey" keeps the false triggers down. Then a set of background-noise and hard-negative recordings to train against.
+- Setup is a couple of minutes and opens a local web UI.
+- Start the trainer and wait. On my MacBook it took under two hours.
+- You get a `.json` and a `.tflite` out. Drop them somewhere ESPHome can reach, for example `/config/models/`, or point at a raw URL.
 
 ## The ESPHome change
 
-It's just a `micro_wake_word:` block pointing `model:` at your trained JSON (the JSON in turn references the `.tflite`). Compile + install **OTA** in the browser:
+It's a `micro_wake_word:` block with `model:` pointing at your trained JSON, which in turn references the `.tflite`. Compile and install over the air from the browser:
 
 ```yaml
 micro_wake_word:
@@ -35,21 +35,21 @@ micro_wake_word:
       sliding_window_size: 5                # optional; smaller = lower latency, more false accepts
 ```
 
-`probability_cutoff` and `sliding_window_size` are baked into the JSON by the trainer, but **you can override them here in YAML**. Once flashed, select the wake word in Home Assistant under **Settings → Voice assistants** for your pipeline.
+The trainer bakes `probability_cutoff` and `sliding_window_size` into the JSON, but you can override them here in the YAML. Once it's flashed, pick the wake word in Home Assistant under Settings → Voice assistants for your pipeline.
 
 ## Tuning — the sensitivity picker
 
-My training didn't produce a perfect model, so I wanted to tweak the cutoff *live* rather than reflash each time.
+My model wasn't perfect, so I wanted to change the cutoff live rather than reflash every time.
 
-**First, find the right value.** Run a live debug in ESPHome (Logs) and watch the detection probabilities — every wake attempt logs its sliding-average probability, e.g.:
+First, find the value you want. Run a live debug in ESPHome (Logs) and watch the probabilities. Every wake attempt logs its sliding average, like this:
 
 ```text
 [D][micro_wake_word] Detected 'hey viki' with sliding average probability is 0.94 and max probability is 0.98
 ```
 
-Say the wake word a few times, note where real triggers land vs. the false ones off the telly, and pick a cutoff that sits between them.
+Say the wake word a few times, see where the real triggers land against the false ones off the telly, and pick a cutoff in between.
 
-**Then expose it in Home Assistant.** Rather than a raw slider I use a template `select` with named steps — friendlier to pick from, and the `on_value` lambda pokes the cutoff straight into the running model (no recompile). The cutoffs are on microWakeWord's 0–255 scale, so `250 ≈ 0.98`, `180 ≈ 0.70`:
+Then expose it in Home Assistant. Rather than a raw slider I use a template `select` with named steps, which is nicer to pick from, and the `on_value` lambda writes the cutoff straight into the running model with no recompile. The cutoffs use microWakeWord's 0–255 scale, so 250 is about 0.98 and 180 about 0.70:
 
 ```yaml
 select:
@@ -71,9 +71,9 @@ select:
         id(hey_viki).set_probability_cutoff(cutoffs[i]);
 ```
 
-`i` is the index of the chosen option (ESPHome's select `on_value` gives you both `x`, the label, and `i`), so each step maps to its matching cutoff. Now you drag it in **Settings → Devices & Services**, live, without reflashing.
+`i` is the index of the option you picked. ESPHome's select `on_value` hands you both `x`, the label, and `i`, so each step maps to its cutoff. Now I drag it in Settings → Devices & Services, live, without reflashing.
 
-(Letting her occasionally interject at the telly is a feature, not a bug. Just sometimes.)
+She still pipes up at the telly now and then. That's on purpose, mostly.
 
 ---
 

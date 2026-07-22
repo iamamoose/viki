@@ -8,19 +8,19 @@ Processing is "take the text, do a thing, respond in text". Home Assistant has a
 
 ## Intents and blueprints
 
-There's a whole set of default **intents** for getting temperatures and setting things — timers, blinds, dimming lights. You can expose or hide your sensors and give them alias names. Where an intent doesn't exist, download a third-party **blueprint** — I use a Google Calendar one and a shopping-list one. (Outside the scope of the talk, but when HA detects we've left the house it texts us both the current shopping list. Yay.)
+There's a whole set of default intents for getting temperatures and setting things: timers, blinds, dimming lights. You can expose or hide your sensors and give them alias names. Where an intent doesn't exist, download a third-party blueprint. I use a Google Calendar one and a shopping-list one. (Outside the scope of the talk, but when HA detects we've left the house it texts us both the current shopping list. Yay.)
 
 That already gets you a better-sounding Alexa. But she's still boring. So:
 
 ## A (fake) personality with automations — fully local, no LLM
 
-Many requests are the same few things — lights on/off, heating, timers — so listen for them with automations and answer **with character**. We went **tsundere**: cares about you, won't admit it. ("The only reason they turned on the kettle was because they wanted tea anyway, not because they like you or anything.")
+Many requests are the same few things — lights on/off, heating, timers — so listen for them with automations and answer with character. We went tsundere: cares about you, won't admit it. ("The only reason they turned on the kettle was because they wanted tea anyway, not because they like you or anything.")
 
 > 💡 I asked ChatGPT to "write things a tsundere would say" and it happily wrote most of these YAMLs for me. We keep adding them as we find things we ask often.
 
 ### Kettle — random reply + live water temp
 
-These are the commands for our **WeeKett** wifi kettle. Add it in the UI or paste the YAML. Note the trigger deliberately accepts the common STT mishears (`Boil|Oil`, `kettle|cattle`) we saw in the [STT quiz](02-speech-to-text.md):
+These are the commands for our WeeKett wifi kettle. Add it in the UI or paste the YAML. The trigger deliberately accepts the common STT mishears (`Boil|Oil`, `kettle|cattle`) we saw in the [STT quiz](02-speech-to-text.md):
 
 ```yaml
 alias: Voice - tea
@@ -212,7 +212,7 @@ data:
 
 ### Washing-machine nag — escalating passive-aggression
 
-How many times have you left clothes in the machine for a day and had to rewash them? A cheap **Zigbee vibration sensor** on the machine lets Viki notice it's finished, then nag hourly with rising frustration. A `counter` tracks how many times she's had to ask:
+How many times have you left clothes in the machine for a day and had to rewash them? A cheap Zigbee vibration sensor on the machine lets Viki notice it's finished, then nag hourly with rising frustration. A `counter` tracks how many times she's had to ask:
 
 ```yaml
 - repeat:
@@ -246,13 +246,13 @@ How many times have you left clothes in the machine for a day and had to rewash 
           preannounce: true
 ```
 
-> 🌙 We have dozens of notifications and they're great — **but not at 3am**. The bedroom device is deliberately left *out* of the `communicators` group so it never gets pinged overnight.
+> 🌙 We have dozens of notifications and they're great, but not at 3am. The bedroom device is deliberately left *out* of the `communicators` group so it never gets pinged overnight.
 
-At this point you have a home assistant with an attitude that runs **totally locally, no LLM**. You could stop here. But then [MekaHime](https://www.youtube.com/@MekaHime)'s fully-local AI companion rig (three machines, three 3090s, ~$7000) showed up in my feed, and… well, let's try adding an LLM.
+At this point you have a home assistant with an attitude that runs totally locally, no LLM. You could stop here. But then [MekaHime](https://www.youtube.com/@MekaHime)'s fully-local AI companion rig (three machines, three 3090s, ~$7000) showed up in my feed, and… well, let's try adding an LLM.
 
 ## Adding an LLM — Google Gemini
 
-Home Assistant is already set up to use an LLM if you like — point your voice assistant at one and it gets the skills to read your sensors and control the home. You can run a local model with a decent machine, but I found **Gemini 2.5 Flash** gives a fast response without spending much.
+Home Assistant is already set up to use an LLM if you like: point your voice assistant at one and it gets the skills to read your sensors and control the home. You can run a local model on a decent machine, but I found Gemini 2.5 Flash gives a fast response without spending much.
 
 First system prompt:
 
@@ -279,21 +279,21 @@ Safety:
 ```
 
 - HA automatically appends all your smart-home data + how to interact with it, so you don't describe any of that yourself.
-- The brevity rules matter — LLMs love long-winded replies.
+- The brevity rules matter. LLMs love long-winded replies.
 - The last "play games" line is for when I fancy a round of 20 questions.
 - The `humf` Safety line is half of the espeak-pronunciation [HUMF fix](04-text-to-speech.md#the-humf-fix).
 
 ### Web lookups (recipes, current info)
 
-Gemini alone only knows what's in the model or in your home. To let it look things up on the web, enable the **"Enable Google Search tool"** option in the [Google Generative AI integration](https://www.home-assistant.io/integrations/google_generative_ai_conversation/#enable-google-search-tool) (Home Assistant docs).
+Gemini alone only knows what's in the model or in your home. To let it look things up on the web, enable the "Enable Google Search tool" option in the [Google Generative AI integration](https://www.home-assistant.io/integrations/google_generative_ai_conversation/#enable-google-search-tool) (Home Assistant docs).
 
 Latency: model lookups ~1–2 s; web lookups ~4–6 s.
 
-**Cost:** I set a **£5/month** cap; in practice it lands around **£1–2/month** (3 months were free credits to start). Token usage spikes when you're actively building and drops when you're on holiday.
+Cost: I set a £5/month cap; in practice it lands around £1–2/month (3 months were free credits to start). Token usage spikes when you're actively building and drops when you're on holiday.
 
 ![Google AI Studio API cost](./cost-graph.png)
 
-Before my free credits ran out (late May) it cost nothing; with a **£5/month** spend cap set as a safety net, real spend has stayed around **a quid or two**.
+Before my free credits ran out (late May) it cost nothing; with the £5/month cap set as a safety net, real spend has stayed around a quid or two.
 
 ## Links
 
