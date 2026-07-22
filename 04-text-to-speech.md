@@ -103,7 +103,7 @@ Installing it into the Piper add-on has a few exact requirements (see the [offic
 
 You don't have to pick just one voice — different speakers (or whoever's home) can use different voices, and you can set up different pipelines too.
 
-> ⚠️ I couldn't get en-GB to train properly, so the shipped voice is en-US, which is why she says "gare-aaj" not "garage" and adds American tomatoes to the shopping list. The fix is the [Scotland Tomato DLC](#scotland-tomato-dlc) below.
+> ⚠️ I couldn't get en-GB to train properly, so the shipped voice is en-US, which is why VIKI_ says "gare-aaj" not "garage" and adds American tomatoes to the shopping list. The fix is the [Scotland Tomato DLC](#scotland-tomato-dlc) below.
 
 ## Replace the "bing" with a "mhm"
 
@@ -141,7 +141,7 @@ Then wrap phonemes in double square brackets anywhere in a Home Assistant respon
 USA is [[təmˈeɪɾoʊ]]. UK is [[təmˈɑːtəʊ]]. Scotland is [[təmˈa:toː]].
 ```
 
-You can also clone the whole voice and just edit the JSON from `en-us` to `en-gb-x-rp` (or `en-gb-scotland`) for an instant English / American / Scottish Viki. The phonemes won't be perfect — you'd have to train with rolling R's etc. — but it's close.
+You can also clone the whole voice and just edit the JSON from `en-us` to `en-gb-x-rp` (or `en-gb-scotland`) for an instant English / American / Scottish VIKI_. The phonemes won't be perfect — you'd have to train with rolling R's etc. — but it's close.
 
 ### The HUMF fix
 

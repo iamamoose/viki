@@ -1,4 +1,4 @@
-# 3. Processing — give her a personality
+# 3. Processing — give VIKI_ a personality
 
 [← Speech-to-Text](02-speech-to-text.md) · [Back to README](./README.md) · Next: [Text-to-Speech →](04-text-to-speech.md)
 
@@ -10,7 +10,7 @@ Processing is "take the text, do a thing, respond in text". Home Assistant has a
 
 There's a whole set of default intents for getting temperatures and setting things: timers, blinds, dimming lights. You can expose or hide your sensors and give them alias names. Where an intent doesn't exist, download a third-party blueprint. I use a Google Calendar one and a shopping-list one. (Outside the scope of the talk, but when HA detects we've left the house it texts us both the current shopping list. Yay.)
 
-That already gets you a better-sounding Alexa. But she's still boring. So:
+That already gets you a better-sounding Alexa. But VIKI_ is still boring. So:
 
 ## A (fake) personality with automations — fully local, no LLM
 
@@ -155,7 +155,7 @@ actions:
       {{ responses | random }}
 ```
 
-### "I love you" — she remembers the coffee machine
+### "I love you" — VIKI_ remembers the coffee machine
 
 ```yaml
 alias: voice - I love you
@@ -212,7 +212,7 @@ data:
 
 ### Washing-machine nag — escalating passive-aggression
 
-How many times have you left clothes in the machine for a day and had to rewash them? A cheap Zigbee vibration sensor on the machine lets Viki notice it's finished, then nag hourly with rising frustration. A `counter` tracks how many times she's had to ask:
+How many times have you left clothes in the machine for a day and had to rewash them? A cheap Zigbee vibration sensor on the machine lets VIKI_ notice it's finished, then nag hourly with rising frustration. A `counter` tracks how many times VIKI_ has had to ask:
 
 ```yaml
 - repeat:

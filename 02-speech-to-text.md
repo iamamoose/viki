@@ -4,7 +4,7 @@
 
 ---
 
-By default Home Assistant gives you phrase-to-text (fine on low-end hardware, but limited to token-named phrases) and speech-to-text. We want to talk to Viki more freely, so it's speech-to-text.
+By default Home Assistant gives you phrase-to-text (fine on low-end hardware, but limited to token-named phrases) and speech-to-text. We want to talk to VIKI_ more freely, so it's speech-to-text.
 
 The default is faster-whisper in a container, with a choice of model. `tiny-int8` is the one recommended for a Pi 4; `base-int8` is more accurate and okay on a Pi 5.
 

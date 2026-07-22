@@ -45,6 +45,6 @@ The hardware is the easy part: a Home Assistant Voice PE (~£60), an M5Stack ATO
 
 Where it lands: mostly local, no local LLM, about £2 a month. Microsoft for STT is an easy win, being free, fast, accurate and private. A cloud LLM isn't essential and carries privacy trade-offs, but only the bits that can't be handled locally go to Google, for a couple of quid a month. I can live with that.
 
-Character arc: she started tsundere (cold, prickly — *"I-it's not like I wanted to help you"*), and I'm experimenting with deredere (warmer, more helpful, a one-word prompt change). The trade-off is that deredere keeps inventing pet names (sweetie, poppet), but at least they're for everyone. LLM sessions are short and she doesn't remember across them; this is a fun voice assistant, not a companion.
+Character arc: VIKI_ started tsundere (cold, prickly — *"I-it's not like I wanted to help you"*), and I'm experimenting with deredere (warmer, more helpful, a one-word prompt change). The trade-off is that deredere keeps inventing pet names (sweetie, poppet), but at least they're for everyone. LLM sessions are short and she doesn't remember across them; this is a fun voice assistant, not a companion.
 
 *Built by joining a lot of existing pieces together — I didn't find anything else that went quite this far. Questions welcome mark@esoom.com.*

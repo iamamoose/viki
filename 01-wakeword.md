@@ -73,7 +73,7 @@ select:
 
 `i` is the index of the option you picked. ESPHome's select `on_value` hands you both `x`, the label, and `i`, so each step maps to its cutoff. Now I drag it in Settings → Devices & Services, live, without reflashing.
 
-She still pipes up at the telly now and then. That's on purpose, mostly.
+VIKI_ still pipes up at the telly now and then. That's on purpose, mostly.
 
 ---
 
