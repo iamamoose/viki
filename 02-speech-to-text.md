@@ -14,21 +14,21 @@ You can also pay for the Home Assistant cloud subscription, which is a Microsoft
 
 | Phrase | tiny-int8 | base-int8 | azure |
 |---|---|---|---|
-| "Turn on the lights" | Turn on the lights | Turn on the lights | Turn on the lights |
-| "Eleven minute timer" | A loving minute timer | 11 minute timer | 11 minute timer |
-| "Boil the kettle" | Oil the kettle | Boil the cattle | Boil the kettle |
+| "Turn on the lights" | ✅ Turn on the lights | ✅ Turn on the lights | ✅ Turn on the lights |
+| "Eleven minute timer" | ❌ A loving minute timer | ✅ 11 minute timer | ✅ 11 minute timer |
+| "Boil the kettle" | ❌ Oil the kettle | ❌ Boil the cattle | ✅ Boil the kettle |
 
 `tiny-int8` barely understands me, and doesn't get my Scottish wife at all. `base-int8` is closer but still trips on "boil the cattle". Azure gets it right. So the cloud's accurate. What about speed?
 
 ## Benchmark — *"What is the bedroom temperature?"*
 
 | Engine | Time |
-|---|---|
+|---|---:|
 | rpi5 (base-int8) | 1.7 s |
 | rpi5 (tiny-int8) | 1.2 s |
 | i7-6700 (base-int8) | 1.0 s |
 | i7-6700 (tiny-int8) | 0.6 s |
-| **Microsoft / Azure STT** | **0.1 s** |
+| 🏆 **Microsoft / Azure STT** | **0.1 s** |
 
 `tiny-int8` is much faster than `base-int8`, as you'd expect, but we need `base` for accuracy unless we go cloud, and 1.7 s on a Pi 5 is annoying when it's on top of everything else the pipeline has to do. The cloud wins here too.
 
