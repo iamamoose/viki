@@ -1,10 +1,10 @@
-# VIKI_ — a mostly-local, mildly judgemental home assistant
+# Meet VIKI_: a mostly-local, mildly judgemental home assistant
 
-> Companion notes for the EMF Camp July 2026 talk *"Building a mostly-local, mildly judgemental home assistant (aka VIKI_'s origin story)"*. [Watch the Video](https://media.ccc.de/v/emf2026-88-1-building-a-mostly-local-mildly-judgemental-home-assistant)
+> Companion notes for the Electromagnetic Fields July 2026 talk *"Building a mostly-local, mildly judgemental home assistant (aka VIKI_'s origin story)"*. [Watch the Video](https://media.ccc.de/v/emf2026-88-1-building-a-mostly-local-mildly-judgemental-home-assistant)
 
-This is the story (and the links, configs and bodges) behind replacing Alexa with a custom-voiced, slightly tsundere Home Assistant voice personality — kept local and cheap where possible, without local LLMs.
+This is the story (and the links, configs and bodges) behind replacing Alexa with a custom-voiced, slightly tsundere Home Assistant voice personality. Kept local and cheap where possible, without local LLMs.
 
-If you were in the room: thanks for coming. Everything I waved at on slides is collected here so you can actually build your own — including the few [glue Python scripts](./scripts/) that hold it all together. Questions → **mark@esoom.com**.
+If you were in the room: thanks for coming. Everything I waved at on slides is collected here so you can actually build your own, including the few [glue Python scripts](./scripts/) that hold it all together. Questions → **mark@esoom.com**.
 
 A few of the samples didn't play on stage, and it turns out these were ones that I saved in 22kHz format. While they play through the speakers and through my HDMI Amp just fine, the HDMI sink used on stage didn't support that format, and a known issue with the Macbook means rather than resample and send a working sample, it just gets dropped.  
 
@@ -21,7 +21,7 @@ We split Home Assistant's voice stack into four stages. The whole talk was just 
 | 🧠 **Processing** | HA intents | Personality automations + optional Gemini LLM | [./03-processing.md](./03-processing.md) |
 | 🔊 **Text-to-Speech** | Piper (default voice) | Piper (Trained a custom anime `viki` voice) | [./04-text-to-speech.md](./04-text-to-speech.md) |
 
-The hardware is the easy part: a Home Assistant Voice PE (~£60), an M5Stack ATOM Echo, or the AtomS3R "pyramid" — all ESP32s running ESPHome with a mic array, speaker, buttons and LEDs. They work out of the box, and it's all open source, so we just take over the bits we want to change.
+The hardware is the easy part: a Home Assistant Voice PE (~£60), an M5Stack ATOM Echo, or the AtomS3R "pyramid", all are ESP32s running ESPHome with a mic array, speaker, buttons and LEDs. They work out of the box, and it's all open source, so we just take over the bits we want to change.
 
 ![The three voice assistants: Home Assistant Voice PE (top-left), M5Stack ATOM Echo (the small cube), and the AtomS3R + Atomic Echo Base in a pyramid case (right)](./hardware.png)
 
@@ -37,7 +37,7 @@ Character arc: VIKI_ started tsundere (cold, prickly — *"I-it's not like I wan
 | **M5Stack ATOM Echo** | [M5Stack store](https://shop.m5stack.com/products/atom-echo-smart-speaker-dev-kit) · UK: [The Pi Hut](https://thepihut.com/products/atom-echo-smart-speaker-dev-kit) | The "$13 voice assistant" — [HA guide](https://www.home-assistant.io/voice_control/thirteen-usd-voice-remote/) |
 | **M5Stack AtomS3R + Echo Base** (the "pyramid") | [AtomS3R-AI Chatbot kit](https://shop.m5stack.com/products/atoms3r-ai-chatbot-kit-8mb-psram) · [M5 HA setup guide](https://docs.m5stack.com/en/homeassistant/voice_assistant/atoms3r_with_atomic_echo_base_voice_assistant) | AtomS3R has the 0.85″ screen; the pyramid is additional |
 
-*Built by joining a lot of existing pieces together — I didn't find anything else that went quite this far. Questions welcome mark@esoom.com.*
+*Built by joining a lot of existing pieces together. I didn't find anything else that went quite this far. Questions welcome mark@esoom.com.*
 
 
 ---
