@@ -1,8 +1,8 @@
-# Meet VIKI_: a mostly-local, mildly judgemental home assistant
+# Meet VIKI_: a mostly-local, mildly judgemental voice assistant
 
 > Companion notes for the Electromagnetic Fields July 2026 talk *"Building a mostly-local, mildly judgemental home assistant (aka VIKI_'s origin story)"*. [Watch the Video](https://media.ccc.de/v/emf2026-88-1-building-a-mostly-local-mildly-judgemental-home-assistant)
 
-This is the story (and the links, configs and bodges) behind replacing Alexa with a custom-voiced, slightly tsundere Home Assistant voice personality. Kept local and cheap where possible, without local LLMs.
+This is the story (and the links, configs and bodges) behind replacing my Home Assistant plus Alexa setup with a custom-voiced, slightly tsundere Home Assistant voice personality. Kept local and cheap where possible, without local LLMs.
 
 If you were in the room: thanks for coming. Everything I waved at on slides is collected here so you can actually build your own, including the few [glue Python scripts](./scripts/) that hold it all together. Questions → **mark@esoom.com**.
 
