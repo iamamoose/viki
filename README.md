@@ -19,6 +19,16 @@ funnier). Each stage has its own page:
 3. [Processing & personality](docs/personality.md): A mixture of automations and optional Gemini LLM
 4. [Text to speech](docs/voice.md): We train a custom anime voice to use with Piper
 
+## Hardware
+
+The devices the talk build runs on are off-the-shelf ESP32 voice
+satellites: a Home Assistant Voice PE, an M5Stack ATOM Echo, or the
+AtomS3R "pyramid". They all run ESPHome and work out of the box, so we
+just take over the bits we want to change. The cheapest is the ATOM
+Echo, the "$13 voice assistant".
+
+See [Hardware](docs/hardware.md) for each option and where to buy.
+
 ## Licence
 
 [Apache-2.0](LICENSE)
