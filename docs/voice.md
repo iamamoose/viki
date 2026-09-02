@@ -1,6 +1,6 @@
 # 4. Text-to-Speech — a custom voice for VIKI_
 
-[← Processing](03-processing.md) · [Back to README](./README.md)
+[← Processing](personality.md) · [Back to README](../README.md)
 
 ---
 
@@ -145,8 +145,8 @@ You can also clone the whole voice and just edit the JSON from `en-us` to `en-gb
 
 ### The HUMF fix
 
-espeak says "hmph" and "baka" badly. Rather than fork the container to add custom rules for them, the [LLM system prompt](03-processing.md#adding-an-llm--google-gemini) rewrites them: no need for baka, and "hmph" becomes "humf", which comes out as a passable *HUMPH!*
+espeak says "hmph" and "baka" badly. Rather than fork the container to add custom rules for them, the [LLM system prompt](personality.md#adding-an-llm--google-gemini) rewrites them: no need for baka, and "hmph" becomes "humf", which comes out as a passable *HUMPH!*
 
 ---
 
-[← Processing](03-processing.md) · [Back to README](./README.md)
+[← Processing](personality.md) · [Back to README](../README.md)

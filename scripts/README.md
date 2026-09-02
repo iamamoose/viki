@@ -2,7 +2,7 @@
 
 The whole project is mostly joining existing pieces together with a few glue
 scripts. These are the Python bits referenced in the talk, for training VIKI's
-custom [Text-to-Speech](../04-text-to-speech.md) voice. They run on a PC with a
+custom [Text-to-Speech](../docs/voice.md) voice. They run on a PC with a
 modest GPU (an NVIDIA 3060 here), not on the Home Assistant server.
 
 | File | Chain step | What it does |
@@ -14,7 +14,7 @@ modest GPU (an NVIDIA 3060 here), not on the Home Assistant server.
 
 Step 2 (clone + set expression) and step 4 (train with **TextyMcSpeechy**, then
 install into the Piper add-on) are covered in
-[04-text-to-speech.md](../04-text-to-speech.md).
+[voice.md](../docs/voice.md).
 
 ## metadata.csv
 

@@ -16,14 +16,14 @@ We split Home Assistant's voice stack into four stages. The whole talk was just 
 
 | Stage | Default | VIKI_ June 2026 | Page |
 |---|---|---|---|
-| 🔔 **Wakeword** | microWakeWord (ESPHome) | Trained my own `"hey_viki"` | [./01-wakeword.md](./01-wakeword.md) |
-| 🗣️ **Speech-to-Text** | faster-whisper (tiny-int8) | Switched to Azure STT (Microsoft) | [./02-speech-to-text.md](./02-speech-to-text.md) |
-| 🧠 **Processing** | HA intents | Personality automations + optional Gemini LLM | [./03-processing.md](./03-processing.md) |
-| 🔊 **Text-to-Speech** | Piper (default voice) | Piper (Trained a custom anime `viki` voice) | [./04-text-to-speech.md](./04-text-to-speech.md) |
+| 🔔 **Wakeword** | microWakeWord (ESPHome) | Trained my own `"hey_viki"` | [./docs/wakeword.md](./docs/wakeword.md) |
+| 🗣️ **Speech-to-Text** | faster-whisper (tiny-int8) | Switched to Azure STT (Microsoft) | [./docs/stt.md](./docs/stt.md) |
+| 🧠 **Processing** | HA intents | Personality automations + optional Gemini LLM | [./docs/personality.md](./docs/personality.md) |
+| 🔊 **Text-to-Speech** | Piper (default voice) | Piper (Trained a custom anime `viki` voice) | [./docs/voice.md](./docs/voice.md) |
 
 The hardware is the easy part: a Home Assistant Voice PE (~£60), an M5Stack ATOM Echo, or the AtomS3R "pyramid", all are ESP32s running ESPHome with a mic array, speaker, buttons and LEDs. They work out of the box, and it's all open source, so we just take over the bits we want to change.
 
-![The three voice assistants: Home Assistant Voice PE (top-left), M5Stack ATOM Echo (the small cube), and the AtomS3R + Atomic Echo Base in a pyramid case (right)](./hardware.png)
+![The three voice assistants: Home Assistant Voice PE (top-left), M5Stack ATOM Echo (the small cube), and the AtomS3R + Atomic Echo Base in a pyramid case (right)](./docs/images/hardware.png)
 
 Where it lands: mostly local, no local LLM, about £2 a month. Microsoft for STT is an easy win, being free, fast, accurate and private. A cloud LLM isn't essential and carries privacy trade-offs, but only the bits that can't be handled locally go to Google, for a couple of quid a month. I can live with that.
 

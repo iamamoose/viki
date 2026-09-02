@@ -1,6 +1,6 @@
 # 3. Processing — give VIKI_ a personality
 
-[← Speech-to-Text](02-speech-to-text.md) · [Back to README](./README.md) · Next: [Text-to-Speech →](04-text-to-speech.md)
+[← Speech-to-Text](stt.md) · [Back to README](../README.md) · Next: [Text-to-Speech →](voice.md)
 
 ---
 
@@ -20,7 +20,7 @@ Many requests are the same few things — lights on/off, heating, timers — so 
 
 ### Kettle — random reply + live water temp
 
-These are the commands for our WeeKett wifi kettle. Add it in the UI or paste the YAML. The trigger deliberately accepts the common STT mishears (`Boil|Oil`, `kettle|cattle`) we saw in the [STT quiz](02-speech-to-text.md):
+These are the commands for our WeeKett wifi kettle. Add it in the UI or paste the YAML. The trigger deliberately accepts the common STT mishears (`Boil|Oil`, `kettle|cattle`) we saw in the [STT quiz](stt.md):
 
 ```yaml
 alias: Voice - tea
@@ -281,7 +281,7 @@ Safety:
 - HA automatically appends all your smart-home data + how to interact with it, so you don't describe any of that yourself.
 - The brevity rules matter. LLMs love long-winded replies.
 - The last "play games" line is for when I fancy a round of 20 questions.
-- The `humf` Safety line is half of the espeak-pronunciation [HUMF fix](04-text-to-speech.md#the-humf-fix).
+- The `humf` Safety line is half of the espeak-pronunciation [HUMF fix](voice.md#the-humf-fix).
 
 ### Web lookups (recipes, current info)
 
@@ -291,7 +291,7 @@ Latency: model lookups ~1–2 s; web lookups ~4–6 s.
 
 Cost: I set a £5/month cap; in practice it lands around £1–2/month (3 months were free credits to start). Token usage spikes when you're actively building and drops when you're on holiday.
 
-![Google AI Studio API cost](./cost-graph.png)
+![Google AI Studio API cost](./images/cost-graph.png)
 
 Before my free credits ran out (late May) it cost nothing; with the £5/month cap set as a safety net, real spend has stayed around a quid or two.
 
@@ -303,4 +303,4 @@ Before my free credits ran out (late May) it cost nothing; with the £5/month ca
 
 ---
 
-[← Speech-to-Text](02-speech-to-text.md) · [Back to README](./README.md) · Next: [Text-to-Speech →](04-text-to-speech.md)
+[← Speech-to-Text](stt.md) · [Back to README](../README.md) · Next: [Text-to-Speech →](voice.md)
