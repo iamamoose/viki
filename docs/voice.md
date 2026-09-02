@@ -1,6 +1,6 @@
 # 4. Text-to-Speech — a custom voice for VIKI_
 
-[← Processing](personality.md) · [Back to README](../README.md)
+[← Processing](personality.md) · [Back to talk notes](emf-talk-notes.md)
 
 ---
 
@@ -21,7 +21,7 @@ I used to use ElevenLabs; Qwen3-TTS does the job now. Ask ChatGPT for a voice-de
 
 It's a voice-design model: no seed, a different voice every run, so keep generating until you like one. Keep the WAV, you'll clone it next.
 
-> 🐍 Full script: [`scripts/voice_design.py`](./scripts/voice_design.py).
+> 🐍 Full script: [`scripts/voice_design.py`](../scripts/voice_design.py).
 
 ```python
 import torch, soundfile as sf
@@ -52,7 +52,7 @@ Clones your designed voice and lets you dial the expression, which is great. "Su
 
 ### Step 3 — Build the training dataset
 
-Training needs a couple of hundred phrases + audio for each. There's a sample `metadata.csv` (pipe-delimited `id|text`) — mine is [`scripts/metadata.csv`](./scripts/metadata.csv), the usual phonetically-balanced sentences plus Home-Assistant-specific lines I added:
+Training needs a couple of hundred phrases + audio for each. There's a sample `metadata.csv` (pipe-delimited `id|text`) — mine is [`scripts/metadata.csv`](../scripts/metadata.csv), the usual phonetically-balanced sentences plus Home-Assistant-specific lines I added:
 
 ```text
 1|The quick brown fox jumps over the lazy dog.
@@ -67,9 +67,9 @@ Training needs a couple of hundred phrases + audio for each. There's a sample `m
 176|You have seven items on your shopping list.
 ```
 
-A small Python script — [`scripts/generate_samples.py`](./scripts/generate_samples.py) — generates all ~176 WAVs via IndexTTS in a few minutes, cloning the designed voice at *melancholic + calm* expression, with a fixed seed so runs are repeatable.
+A small Python script — [`scripts/generate_samples.py`](../scripts/generate_samples.py) — generates all ~176 WAVs via IndexTTS in a few minutes, cloning the designed voice at *melancholic + calm* expression, with a fixed seed so runs are repeatable.
 
-> ⚠️ You must listen to every one. If the audio doesn't match the text, training fails, and that takes far longer than generating them. Two regenerated wrong the first time. IndexTTS also leaves gaps that turn into. Strange. Gaps. In your. Output. — `interval_silence=0` and `max_text_tokens_per_segment=200` cut most of them at generation, but I still run a second script, [`scripts/trim_gaps.py`](./scripts/trim_gaps.py), afterwards: it's punctuation-aware, so it collapses the spurious tokenizer pauses while *protecting* the deliberate comma / full-stop ones.
+> ⚠️ You must listen to every one. If the audio doesn't match the text, training fails, and that takes far longer than generating them. Two regenerated wrong the first time. IndexTTS also leaves gaps that turn into. Strange. Gaps. In your. Output. — `interval_silence=0` and `max_text_tokens_per_segment=200` cut most of them at generation, but I still run a second script, [`scripts/trim_gaps.py`](../scripts/trim_gaps.py), afterwards: it's punctuation-aware, so it collapses the spurious tokenizer pauses while *protecting* the deliberate comma / full-stop ones.
 
 ### Step 4 — Train + install — TextyMcSpeechy
 **<https://github.com/domesticatedviking/TextyMcSpeechy>**
@@ -149,4 +149,4 @@ espeak says "hmph" and "baka" badly. Rather than fork the container to add custo
 
 ---
 
-[← Processing](personality.md) · [Back to README](../README.md)
+[← Processing](personality.md) · [Back to talk notes](emf-talk-notes.md)

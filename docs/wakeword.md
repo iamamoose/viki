@@ -1,6 +1,6 @@
 # 1. Wakeword — train your own
 
-[← Back to README](../README.md) · Next: [Speech-to-Text →](stt.md)
+[← Back to talk notes](emf-talk-notes.md) · Next: [Speech-to-Text →](stt.md)
 
 ---
 
@@ -77,4 +77,4 @@ VIKI_ still pipes up at the telly now and then. That's on purpose, mostly.
 
 ---
 
-[← Back to README](../README.md) · Next: [Speech-to-Text →](stt.md)
+[← Back to talk notes](emf-talk-notes.md) · Next: [Speech-to-Text →](stt.md)

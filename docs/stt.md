@@ -1,6 +1,6 @@
 # 2. Speech-to-Text — is local good enough?
 
-[← Wakeword](wakeword.md) · [Back to README](../README.md) · Next: [Processing →](personality.md)
+[← Wakeword](wakeword.md) · [Back to talk notes](emf-talk-notes.md) · Next: [Processing →](personality.md)
 
 ---
 
@@ -62,4 +62,4 @@ Free, fast, accurate and private. You just need an internet connection.
 
 ---
 
-[← Wakeword](wakeword.md) · [Back to README](../README.md) · Next: [Processing →](personality.md)
+[← Wakeword](wakeword.md) · [Back to talk notes](emf-talk-notes.md) · Next: [Processing →](personality.md)
