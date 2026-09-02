@@ -6,6 +6,9 @@ custom-trained voice, and opinions of her own.
 
 [Watch the Video from **EMF Camp 2026**](https://media.ccc.de/v/emf2026-88-1-building-a-mostly-local-mildly-judgemental-home-assistant)
 
+If you were at the talk: the [companion notes](docs/emf-talk-notes.md)
+collect everything waved at on slides.
+
 > 🚧 This repo is being reorganised — expect things to move around.
 
 ## The software pipeline:
