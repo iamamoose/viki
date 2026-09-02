@@ -11,7 +11,7 @@ collect everything waved at on slides.
 
 > 🚧 This repo is being reorganised — expect things to move around.
 
-## The software pipeline:
+## Software
 
 We split Home Assistant's voice stack into four stages. The whole talk
 was just replacing each one with something better (or at least
@@ -24,11 +24,10 @@ funnier). Each stage has its own page:
 
 ## Hardware
 
-The devices the talk build runs on are off-the-shelf ESP32 voice
+The devices the EMF Camp talk build runs on are off-the-shelf ESP32 voice
 satellites: a Home Assistant Voice PE, an M5Stack ATOM Echo, or the
 AtomS3R "pyramid". They all run ESPHome and work out of the box, so we
-just take over the bits we want to change. The cheapest is the ATOM
-Echo, the "$13 voice assistant".
+just take over the bits we want to change.
 
 See [Hardware](docs/hardware.md) for each option and where to buy.
 
