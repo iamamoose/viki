@@ -4,10 +4,7 @@ VIKI_ is a [Home Assistant](https://www.home-assistant.io/) voice
 assistant with a tsundere personality. Fully local custom wake-word,
 custom-trained voice, and opinions of her own.
 
-[Watch the Video from **EMF Camp 2026**](https://media.ccc.de/v/emf2026-88-1-building-a-mostly-local-mildly-judgemental-home-assistant)
-
-If you were at the talk: the [companion notes](docs/emf2026/emf-talk-notes.md)
-collect everything I waved at on slides.
+[Watch the Video from **EMF Camp 2026**](https://media.ccc.de/v/emf2026-88-1-building-a-mostly-local-mildly-judgemental-home-assistant).  The [companion notes](docs/emf2026/emf-talk-notes.md) collect everything I waved at on slides, some of the details have been updated since though, see below.
 
 ## Software
 
