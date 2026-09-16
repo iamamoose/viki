@@ -28,5 +28,5 @@ AtomS3R "pyramid". See [Hardware](docs/hardware.md) for each option and where to
 
 ## Licences
 
-VIKI scripts under [Apache 2.0](https://github.com/iamamoose/viki/blob/main/LICENSE), VIKI voice files from https://github.com/iamamoose/viki-assets under [CC BY-SA 4.0](https://github.com/iamamoose/viki/blob/main/LICENSE)
+VIKI scripts under [Apache 2.0](https://github.com/iamamoose/viki/blob/main/LICENSE), VIKI voice files from https://github.com/iamamoose/viki-assets under [CC BY-SA 4.0](https://github.com/iamamoose/viki-assets/blob/main/LICENSE)
 
