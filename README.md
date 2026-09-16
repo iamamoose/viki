@@ -22,8 +22,10 @@ funnier). Each stage has its own page:
 3. [Processing & personality](docs/personality.md): A mixture of automations and optional Gemini LLM
 4. [Text to speech](docs/voice.md): We train a custom anime voice to use with Piper
 
-The trained voice, her sounds and the recipe to rebuild them live in
-[viki-assets](https://github.com/iamamoose/viki-assets).
+The trained voice and her sounds live in
+[viki-assets](https://github.com/iamamoose/viki-assets); if you'd rather
+make your own, the recipe is in [Make your own VIKI_
+voice](docs/make-your-own-voice.md).
 
 ## Hardware
 

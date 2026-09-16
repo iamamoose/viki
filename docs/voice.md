@@ -12,20 +12,21 @@ processors. We stick with Piper.
 We stick with Piper which comes with many voices but you can also train your own.
 Some people have done the Enterprise computer or Commander Data; we watch a lot of anime, so we wanted something more endearing.
 
-## The VIKI voice, and how to build your own
+## Using our VIKI_
 
-Everything lives in
-**[viki-assets](https://github.com/iamamoose/viki-assets)**:
+The trained voice, her non-speech noises and install instructions are in
+**[viki-assets](https://github.com/iamamoose/viki-assets)**. Download the
+release, drop two files into the Piper add-on, done.
 
-- the trained Piper voice, ready to drop into Home Assistant
-- her non-speech noises, like the `mhm` she answers with
-- the full recipe including scripts, phrase list, and the reference clip she was
-  cloned from
+## Or make your own
 
-Short version: describe a voice in words, let Qwen3-TTS invent someone
-who sounds like that, have it read a few hundred lines, then fine-tune
-Piper on the result. No human voice donor anywhere in the chain, which
-is why we can licence her CC BY-SA.
+Describe a voice in words, let Qwen3-TTS invent someone who sounds like
+that, have it read a few hundred lines, then fine-tune Piper on the
+result. No human voice donor anywhere in the chain, which is why we can
+licence ours CC BY-SA — and yours is yours.
+
+> 🎛️ Full recipe, including the mistakes that cost us days:
+> [Make your own VIKI_ voice](make-your-own-voice.md).
 
 ## Replace the "bing" with a "mhm"
 
