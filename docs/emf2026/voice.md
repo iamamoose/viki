@@ -3,7 +3,7 @@
 > 📻 **As presented at EMF Camp 2026.** Frozen as a record of the talk —
 > the project has moved on since. Current: [Text-to-Speech](../voice.md).
 
-[← Processing](personality.md) · [Back to talk notes](../emf-talk-notes.md)
+[← Processing](personality.md) · [Back to talk notes](emf-talk-notes.md)
 
 ---
 
@@ -152,4 +152,4 @@ espeak says "hmph" and "baka" badly. Rather than fork the container to add custo
 
 ---
 
-[← Processing](personality.md) · [Back to talk notes](../emf-talk-notes.md)
+[← Processing](personality.md) · [Back to talk notes](emf-talk-notes.md)

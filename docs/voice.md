@@ -1,6 +1,6 @@
 # 4. Text-to-Speech — a custom voice for VIKI_
 
-[← Processing](personality.md) · [Back to talk notes](emf-talk-notes.md)
+[← Processing](personality.md) · [Back to VIKI](../README.md)
 
 ---
 
@@ -47,4 +47,4 @@ and a half times the size.
 
 ---
 
-[← Processing](personality.md) · [Back to talk notes](emf-talk-notes.md)
+[← Processing](personality.md) · [Back to VIKI](../README.md)

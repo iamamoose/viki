@@ -3,7 +3,7 @@
 > 📻 **As presented at EMF Camp 2026.** Frozen as a record of the talk —
 > the project has moved on since. Current: [Wake word](../wakeword.md).
 
-[← Back to talk notes](../emf-talk-notes.md) · Next: [Speech-to-Text →](stt.md)
+[← Back to talk notes](emf-talk-notes.md) · Next: [Speech-to-Text →](stt.md)
 
 ---
 
@@ -80,4 +80,4 @@ VIKI_ still pipes up at the telly now and then. That's on purpose, mostly.
 
 ---
 
-[← Back to talk notes](../emf-talk-notes.md) · Next: [Speech-to-Text →](stt.md)
+[← Back to talk notes](emf-talk-notes.md) · Next: [Speech-to-Text →](stt.md)

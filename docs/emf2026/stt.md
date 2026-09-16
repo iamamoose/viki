@@ -3,7 +3,7 @@
 > 📻 **As presented at EMF Camp 2026.** Frozen as a record of the talk —
 > the project has moved on since. Current: [Speech-to-Text](../stt.md).
 
-[← Wakeword](wakeword.md) · [Back to talk notes](../emf-talk-notes.md) · Next: [Processing →](personality.md)
+[← Wakeword](wakeword.md) · [Back to talk notes](emf-talk-notes.md) · Next: [Processing →](personality.md)
 
 ---
 
@@ -65,4 +65,4 @@ Free, fast, accurate and private. You just need an internet connection.
 
 ---
 
-[← Wakeword](wakeword.md) · [Back to talk notes](../emf-talk-notes.md) · Next: [Processing →](personality.md)
+[← Wakeword](wakeword.md) · [Back to talk notes](emf-talk-notes.md) · Next: [Processing →](personality.md)

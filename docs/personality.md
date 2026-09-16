@@ -1,6 +1,6 @@
 # 3. Processing — give VIKI_ a personality
 
-[← Speech-to-Text](stt.md) · [Back to talk notes](emf-talk-notes.md) · Next: [Text-to-Speech →](voice.md)
+[← Speech-to-Text](stt.md) · [Back to VIKI](../README.md) · Next: [Text-to-Speech →](voice.md)
 
 ---
 
@@ -303,4 +303,4 @@ Before my free credits ran out (late May) it cost nothing; with the £5/month ca
 
 ---
 
-[← Speech-to-Text](stt.md) · [Back to talk notes](emf-talk-notes.md) · Next: [Text-to-Speech →](voice.md)
+[← Speech-to-Text](stt.md) · [Back to VIKI](../README.md) · Next: [Text-to-Speech →](voice.md)
