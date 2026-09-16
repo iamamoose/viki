@@ -17,7 +17,7 @@ references the `.tflite` beside it by name. Or point ESPHome straight at
 the raw URLs.
 
 Fair warning: it's tuned to our voices and our living room. If it misses
-you, [make your own](make-your-own-wakeword.md) — it's an afternoon.
+you, [make your own](make-your-own-wakeword.md)
 
 ## The ESPHome change
 
@@ -27,11 +27,13 @@ It's a `micro_wake_word:` block with `model:` pointing at your trained JSON, whi
 micro_wake_word:
   vad:                      # optional voice-activity model — cuts non-speech false accepts
   models:
-    - model: /config/models/hey_viki.json   # local path, or a full https:// URL to the JSON
+    - model: https://raw.githubusercontent.com/iamamoose/viki-assets/main/wakeword/hey_viki.json
       id: hey_viki
       probability_cutoff: 0.97              # 0.0–1.0; higher = stricter (fewer false wakes, more misses)
       sliding_window_size: 5                # optional; smaller = lower latency, more false accepts
 ```
+
+That's ours straight from viki-assets — ESPHome fetches the JSON and picks up the `.tflite` sitting beside it. For a local copy use `/config/models/hey_viki.json` instead, with both files in that folder.
 
 The trainer bakes `probability_cutoff` and `sliding_window_size` into the JSON, but you can override them here in the YAML. Once it's flashed, pick the wake word in Home Assistant under Settings → Voice assistants for your pipeline.
 
