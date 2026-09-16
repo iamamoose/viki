@@ -142,6 +142,21 @@ espeak.
 
 ## Things that cost us a day each
 
+**en-GB silently trains nothing.** TextyMcSpeechy's `en-gb.conf` sets
+`ESPEAK_LANGUAGE="en-gb"`, which `piper_phonemize` rejects — it only
+accepts the regional variants, `en-gb-x-rp` and friends. Preprocessing
+dies, but a zero-byte `dataset.jsonl` is written anyway, so training
+starts, says `No training batches` and exits 0. Nothing mentions the
+language. It just looks like it didn't work, which is why VIKI_ shipped
+as en-US and needed the [tomato bodge](voice.md#scotland-tomato-dlc).
+
+Set `ESPEAK_LANGUAGE="en-gb-x-rp"` and it trains fine. Patch submitted
+upstream: [domesticatedviking/TextyMcSpeechy#68](https://github.com/domesticatedviking/TextyMcSpeechy/pull/68).
+
+Confusingly the wrong value looks right — `espeak-ng --voices` does list
+`en-gb`, exactly as the comment in that file tells you to check. Piper
+bundles its own espeak-ng-data, which doesn't.
+
 **More audio beats more epochs.** Our first attempt was 166 short lines
 — 4.2 minutes — and it warbled after seven hours of training. Going to
 416 longer lines (22 minutes) fixed what more epochs couldn't. If it

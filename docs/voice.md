@@ -57,6 +57,14 @@ The US voice mispronounces things. The grapheme→phoneme step is espeak,
 but it runs *inside* the Piper container, and I'm trying not to fork a
 container. The bodge: feed Home Assistant the phonemes directly.
 
+> 🔧 We now know why she was en-US in the first place: TextyMcSpeechy's
+> en-GB config uses an espeak voice piper rejects, so en-GB training
+> silently did nothing. Fixed by setting `en-gb-x-rp` — see [Make your
+> own VIKI_ voice](make-your-own-voice.md) and
+> [TextyMcSpeechy#68](https://github.com/domesticatedviking/TextyMcSpeechy/pull/68). Train en-GB and most of this section stops
+> being necessary, though it's still the trick for doing accents on
+> purpose.
+
 Generate IPA per accent on the command line:
 
 ```bash
