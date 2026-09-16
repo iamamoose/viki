@@ -18,20 +18,13 @@ funnier). Each stage has its own page:
 1. [Wake word](docs/wakeword.md): We create "hey viki" as a wake word
 2. [Speech to text](docs/stt.md): We use Microsoft Azure STT and test handling of regional dialects
 3. [Processing & personality](docs/personality.md): A mixture of automations and optional Gemini LLM
-4. [Text to speech](docs/voice.md): We create a custom anime voice to use with Piper
-. The trained voice and her sounds live in
-[viki-assets](https://github.com/iamamoose/viki-assets); if you'd rather
-make your own, the howto is in [Make your own VIKI_
-voice](docs/make-your-own-voice.md).
+4. [Text to speech](docs/voice.md): We create a custom anime voice to use with Piper.
 
 ## Hardware
 
 The devices the EMF Camp talk build runs on are off-the-shelf ESP32 voice
-satellites: a Home Assistant Voice PE, an M5Stack ATOM Echo, or the
-AtomS3R "pyramid". They all run ESPHome and work out of the box, so we
-just take over the bits we want to change.
-
-See [Hardware](docs/hardware.md) for each option and where to buy.
+satellites running ESPHome: a Home Assistant Voice PE, an M5Stack ATOM Echo, or the
+AtomS3R "pyramid". See [Hardware](docs/hardware.md) for each option and where to buy.
 
 ## Licence
 
