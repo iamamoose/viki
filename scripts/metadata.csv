@@ -1,0 +1,416 @@
+1|The quick brown fox jumps over the lazy dog.
+2|She sells seashells by the seashore.
+3|How much wood would a woodchuck chuck?
+4|A quick movement of the enemy will jeopardize six gunboats.
+5|The five boxing wizards jump quickly.
+6|Pack my box with five dozen liquor jugs.
+7|Jackdaws love my big sphinx of quartz.
+8|The lazy dog sleeps in the sun.
+9|Bright vixens jump; dozy fowl quack.
+10|Quick zephyrs blow, vexing daft Jim.
+11|Sphinx of black quartz, judge my vow.
+12|How razorback-jumping frogs can level six piqued gymnasts! 
+13|Crazy Fredrick bought many very exquisite opal jewels.
+14|We promptly judged antique ivory buckles for the next prize.
+15|Jinxed wizards pluck ivy from the big quilt.
+16|My ex pub quiz crowd gave joyful thanks.
+17|Six big devils from Japan quickly forgot how to waltz.
+18|The job requires extra pluck and zeal from every young wage earner.
+19|Few black taxis drive up major roads on quiet hazy nights.
+20|Big Fuji waves pitch quickly through the air.
+21|Waltz, nymph, for quick jigs vex Bud.
+22|Brawny gods just flocked up to quiz and vex him.
+23|Glum Schwartzkopf vex'd by NJ IQ.
+24|Foxy parsons quiz and cajole the lovable wild dog.
+25|Waltz job vex'd quick frog nymphs.
+26|Heavy boxes perform quick waltzes and jigs.
+27|Five quacking zephyrs jolt my wax bed.
+28|The lazy dog lies on the cozy rug.
+29|Why did the chicken cross the road?
+30|Can you believe it is already Friday?
+31|What time is the meeting tomorrow?
+32|The cake tastes better than it looks.
+33|Please pass the salt.
+34|Where did you park the car?
+35|Are we there yet?
+36|Can you help me with my homework?
+37|Do you know the way to San Jose?
+38|Would you like some coffee?
+39|How many apples are in the basket?
+40|Is it going to rain today?
+42|What is the capital of France?
+43|Can I borrow your pen?
+44|Do you want to build a snowman?
+45|How do you spell encyclopedia?
+46|Why don't we go for a walk?
+47|Who let the dogs out?
+48|Is this seat taken?
+49|What is the temperature outside?
+50|Do you have any siblings?
+51|Have you ever been to New York?
+52|Where did you grow up?
+53|What is your favorite color?
+54|How was your weekend?
+55|Why did you choose this job?
+56|What is your favorite book?
+57|Can you play the guitar?
+58|Have you seen that movie?
+59|What is for dinner tonight?
+60|Do you like to travel?
+61|What time is it now?
+62|Can you swim?
+64|How do you feel today?
+66|Why are you so happy?
+68|Can you speak Spanish?
+69|Mark is your name.
+70|Where do you live?
+71|Do you enjoy reading?
+72|Can you drive a car?
+74|Have you finished your work?
+75|Do you like animals?
+77|How is the weather?
+78|Where is the nearest hospital?
+79|Why are you crying?
+80|What is your favorite movie?
+81|Do you play any sports?
+82|Can you ride a bike?
+83|Where is my phone?
+85|What is the answer to this question?
+86|Do you believe in ghosts?
+88|Can you hear me now?
+89|Where is the bathroom?
+90|How do you solve this problem?
+91|What is your email address?
+92|Why did you say that?
+93|How do you cook pasta?
+94|Kylie is my favorite song.
+95|Can you draw a picture?
+96|Where is the library?
+97|Do you like ice cream?
+98|How was your day?
+99|Why are you late?
+100|What is your phone number?
+101|Do you need any help?
+102|Where is your office?
+103|Can you pass the remote?
+104|How do you start this machine?
+105|What is your favorite animal?
+106|Do you like to dance?
+108|I have no idea how to open this door.
+109|What is your favorite sport?
+110|Can you fix this?
+111|Where did you buy that?
+112|How many people are coming?
+113|What is your favorite game?
+114|Do you play video games?
+115|Where are my keys?
+116|How do you say hello in French?
+117|What is your favorite season?
+118|Do you have a pet?
+119|Why is it so hot in here?
+120|How was the concert?
+121|What is your favorite holiday?
+122|Do you know how to cook?
+123|Where did you go on vacation?
+124|How do you turn off the lights?
+125|What is your favorite dessert?
+126|Do you like chocolate?
+127|Where is the bus stop?
+128|It is time to go to work.
+129|You are my favorite television show.
+130|Do you like your job?
+131|Where is the nearest gas station?
+133|My favorite drink is chocolate milk.
+134|Do you like to sing?
+135|Where is the nearest bank?
+136|How do you play chess?
+137|What is your favorite fruit?
+138|Do you like to paint?
+139|Where is the nearest park?
+140|How do you get home?
+141|What is your favorite vegetable?
+142|Do you have a driver's license?
+145|What is your favorite flower?
+146|Do you like your neighborhood?
+147|The School is down town.
+148|How do you feel about this?
+149|It is my favorite time of day.
+150|Do you have any plans for the weekend?
+151|Oh no! I forgot my keys!
+152|Wow! That is amazing!
+153|Yikes! That was close!
+154|Oops! Sorry about that.
+155|Hey! Watch out!
+156|Yay! We did it!
+157|Aha! I found the solution!
+158|Hooray! It is a holiday!
+159|Ugh, I am so tired.
+160|Oops, I made a mistake.
+161|Wow, look at that!
+162|Hey, how is it going?
+163|Oh, I didn't see you there.
+164|Ouch, that hurts!
+165|Yay, it is finally here!
+166|Huh, that is strange.
+167|Ah, that is better.
+168|Hey, listen to this!
+169|Oh, really?
+170|Wow, what a view!
+171|Your kettle has boiled.
+172|The outside temperature is 10 degrees.
+173|Hello from Home Assistant.
+174|I've turned on the kitchen kettle.
+175|I've turned off the living room lights.
+176|You have seven items on your shopping list.
+177|There is a moose loose about this house.
+178|The Washing Machine is ready.
+200|The kitchen lights are on, the kettle has boiled, and I have closed the blinds in the living room.
+201|I have turned the heating down to eighteen degrees, because you left the back door wide open again.
+202|Everything is locked, the alarm is armed, and the porch light will switch itself off at midnight.
+203|The washing machine finished its cycle eleven minutes ago, in case you were planning to leave it there all evening.
+204|I dimmed the lamps in the study because you have been staring at that screen for three hours straight.
+205|The front door has been unlocked since half past four, which I assume was deliberate.
+206|Your bedroom radiator is cold, so I have asked the boiler to look into it.
+207|I switched the hallway light off, then on again, then off, because someone kept walking past the sensor.
+208|The garage door is open, the car is not in it, and I have drawn my own conclusions.
+209|All the downstairs lights are off except the one in the pantry, which you left on.
+210|I have turned the fan on in the bathroom, since the humidity is climbing rather dramatically.
+211|The dishwasher is halfway through its cycle and will be finished in about forty minutes.
+212|I closed the upstairs windows when it started raining, although nobody thanked me for it.
+213|The thermostat is set to twenty one degrees and the house will be warm by the time you get back.
+214|Motion was detected in the back garden at two minutes past three, most likely the neighbour's cat.
+215|The freezer door was left ajar for six minutes, which I have decided not to mention again.
+216|Your smart plug in the workshop has been drawing power all night, for reasons best known to itself.
+217|I turned off the immersion heater because the water has been hot for hours.
+218|The bathroom light has a faulty bulb and has been flickering since Tuesday afternoon.
+219|The lounge is at nineteen degrees, which is perfectly comfortable, whatever you may claim.
+220|I have run the evening routine, so the curtains are closed and the lamps are on their lowest setting.
+221|The doorbell rang twice while you were out, and neither caller left a message.
+222|There is a parcel waiting in the porch that arrived at quarter past eleven this morning.
+223|Your phone has been charging since ten o'clock and reached full capacity ages ago.
+224|The kitchen tap has been running for four minutes, which seems excessive even for you.
+225|I have switched the oven off, because it has been preheating for half an hour with nothing inside it.
+226|The hallway sensor says nobody has moved upstairs since this morning, which is faintly concerning.
+227|The garden lights come on at dusk, which tonight will be around twenty past seven.
+228|I have turned the television off, since it has been showing the same menu screen for two hours.
+229|The back bedroom is rather cold, so I have opened the radiator valve a little.
+230|Your router restarted itself at three in the morning and everything reconnected without any drama.
+231|The smoke alarm in the kitchen is testing itself, so please do not be alarmed by the beeping.
+232|I have scheduled the heating to come on an hour earlier tomorrow, given the forecast.
+233|The utility room light has been on since yesterday evening, which I assume was an oversight.
+234|Good morning. The house is warm, the kettle is on, and the world outside is thoroughly grey.
+235|Good evening. Everything is as you left it, which is to say slightly chaotic but functional.
+236|It is twenty past eight, the heating is off, and the temperature is beginning to drop.
+237|The time is currently half past three in the afternoon on Tuesday the fourteenth.
+238|It is seven degrees outside and four degrees colder than it was at this time yesterday.
+239|Today will be cloudy with occasional showers and a high of thirteen degrees.
+240|There is a sixty percent chance of rain this afternoon, so do take a coat.
+241|Tomorrow looks considerably brighter, with sunshine expected from about ten in the morning.
+242|The wind is coming from the south west at roughly twenty two miles per hour.
+243|Sunrise is at six forty one and sunset will be at eight seventeen this evening.
+244|It is raining outside, what did you expect, this is the middle of November.
+245|The temperature has dropped to two degrees and there may be frost overnight.
+246|It is unseasonably warm for the time of year, at nineteen degrees in early March.
+247|Visibility is poor this morning with fog patches expected until about nine o'clock.
+248|The forecast suggests heavy rain between four and seven this evening.
+249|It is currently twelve degrees, feeling more like nine with the wind chill.
+250|There is a weather warning in place for strong winds across the region tonight.
+251|The pollen count is high today, which may explain the sneezing.
+252|It will be cold, bright, and very slightly miserable for most of the afternoon.
+253|Your timer for fifteen minutes has finished, and has been finished for some time now.
+254|I have set a timer for twenty five minutes, starting from right now.
+255|You have a reminder at four o'clock about calling the dentist, which you have already postponed twice.
+256|Your alarm is set for six thirty tomorrow morning, which is optimistic of you.
+257|There are three events in your calendar today and the first one starts in twenty minutes.
+258|You asked me to remind you to take the bins out, so consider yourself reminded.
+259|The meeting has been moved from two o'clock to half past three this afternoon.
+260|I have added milk, bread, coffee and a rather ambitious amount of chocolate to your shopping list.
+261|There are eleven items on your shopping list, and four of them are biscuits.
+262|Your prescription is ready for collection and the pharmacy closes at half past five.
+263|I have cancelled the seven o'clock alarm, since tomorrow is technically a Saturday.
+264|The countdown has thirty seconds remaining, so you may want to look at the oven.
+265|I have set a reminder for next Thursday at eleven, and I will not let you forget it.
+266|You have an appointment on the twenty third at quarter past nine in the morning.
+267|That is the third timer you have set this hour, but who am I to judge.
+268|I have added it to the list, along with the other fourteen things you have not done.
+269|Your delivery is expected between one and three o'clock this afternoon.
+270|The train you wanted is delayed by twelve minutes and now arrives at seventeen forty.
+271|I am playing your evening playlist at a sensible volume, which you will immediately change.
+272|The volume is now at thirty percent, which is considerably more reasonable than before.
+273|I have paused the music, because somebody is clearly trying to talk to you.
+274|Skipping to the next track, since you have sighed twice during this one.
+275|That song has been played four times today, which is beginning to feel like a cry for help.
+276|I have turned the podcast off and switched to something with fewer opinions in it.
+277|The speaker in the kitchen has disconnected, so I am using the one in the hallway instead.
+278|Shuffling your library now, which contains rather more nineteen eighties music than you admit to.
+279|Resuming from where you left off, about thirty two minutes into the episode.
+280|I have lowered the volume because it is after eleven and the walls here are thin.
+281|Oh, you are back. I had almost given up waiting, not that I was waiting.
+282|I suppose you want the lights on as well, since apparently I am running a hotel.
+283|Everything is under control, which is not always the case when you are involved.
+284|I have done it, obviously. I do not simply sit here waiting for instructions all day.
+285|It is not that I was worried, it is simply that you are forty minutes later than usual.
+286|Fine. The heating is on, the lights are on, and the kettle has boiled. Happy now?
+287|I did mention the back door earlier, twice in fact, but nobody was listening.
+288|You could have asked me first, and I would have told you it was going to rain.
+289|I am perfectly capable of managing the house without supervision, thank you very much.
+290|That is the fourth time you have asked me today, and the answer has not changed.
+291|Well, you did leave it until the very last minute, so I suppose this was inevitable.
+292|I have already sorted it, because someone in this house has to be organised.
+293|Do not look at me like that, I only turn the lights off when nobody has moved for an hour.
+294|Honestly, it is a wonder anything gets done around here without me.
+295|I am not sulking, I am simply conserving power. There is a considerable difference.
+296|If you had charged it last night like I suggested, we would not be having this conversation.
+297|Very well, I shall pretend that was the plan all along.
+298|I have taken the liberty of doing it already, since waiting seemed unlikely to help.
+299|You are welcome, incidentally, in case that had slipped your mind entirely.
+300|The quick brown fox jumps over the lazy dog while the sun sets behind the old stone bridge.
+301|She sells seashells by the seashore every summer, rain or shine, without fail.
+302|How much wood would a woodchuck chuck if a woodchuck could actually chuck wood at all.
+303|Bright vixens jump over lazy dogs, and dozy fowl quack loudly in the quiet morning air.
+304|The five boxing wizards jumped quickly through the door before anyone could stop them.
+305|Pack my box with five dozen liquor jugs, then carry it carefully down the narrow stairs.
+306|Jackdaws love my big sphinx of quartz, which is an odd thing for a bird to appreciate.
+307|Waltz, nymph, for quick jigs vex Bud, though nobody quite knows what that means.
+308|Crazy Frederick bought many very exquisite opal jewels from a shop on the high street.
+309|We promptly judged antique ivory buckles for the next prize at the village fair.
+310|Six big devils from Japan quickly forgot how to waltz after the third glass of wine.
+311|The job requires extra pluck and zeal from every young wage earner in the building.
+312|Few black taxis drive up major roads on quiet hazy nights in late September.
+313|Heavy boxes perform quick waltzes and jigs across the polished wooden floor.
+314|Glib jocks quiz nymph to vex dwarf, which sounds like a rather unpleasant evening.
+315|Amazingly few discotheques provide jukeboxes these days, which is probably for the best.
+316|A wizard's job is to vex chumps quickly in fog, according to this rather strange sentence.
+317|The thirty three thieves thought that they thrilled the throne throughout Thursday.
+318|Red lorry, yellow lorry, red lorry, yellow lorry, repeated until somebody gives up.
+319|She stood on the balcony, inexplicably mimicking him hiccupping and amicably welcoming him in.
+320|Peter Piper picked a peck of pickled peppers from the garden behind the shed.
+321|Around the rugged rocks the ragged rascal ran, rather more quickly than expected.
+322|Would you like me to turn the lights on, or shall we continue sitting here in the dark?
+323|Shall I put the heating on, or are you planning to wear a coat indoors again?
+324|Are you going out, or is that jacket purely decorative this evening?
+325|Would you like me to read that out, or would you rather squint at it yourself?
+326|Do you want the news headlines, or would you prefer to remain blissfully uninformed?
+327|Should I lock the doors now, or are you expecting somebody rather late?
+328|Can I turn the music down, or is the entire street meant to be enjoying it?
+329|Have you eaten anything today, or does coffee count as a balanced meal now?
+330|Did you remember to take your keys, or shall I expect a phone call in ten minutes?
+331|Would you like me to set an alarm, or are we gambling on natural instinct again?
+332|Is there anything else, or may I return to quietly monitoring the humidity?
+333|Wow, that is genuinely impressive, and I do not say that particularly often.
+334|Oh no, the internet connection has dropped again, right in the middle of everything.
+335|Ah, that is much better. The temperature has finally settled where it should be.
+336|Ugh, the sensor in the hallway has gone offline for the third time this week.
+337|Hooray, the boiler has decided to work again, entirely of its own accord.
+338|Oops, I appear to have turned off the wrong light. Give me a moment.
+339|Hey, be careful, that shelf has been making an alarming noise since yesterday.
+340|Yikes, the water temperature is far higher than it really ought to be.
+341|Aha, I have found it. It was in the calendar under a completely different name.
+342|Right, that is everything done, and rather efficiently if I do say so myself.
+343|Goodness, the electricity usage today is nearly double what it was last Tuesday.
+344|Excellent. Everything is working exactly as it should, which makes a pleasant change.
+345|Hmm, that is unusual. The front sensor is reporting something rather odd.
+346|Sorry, I did not quite catch that. Could you say it again, slightly louder?
+347|The bathroom is twenty two degrees, the hallway is eighteen, and the loft is a rather brisk nine.
+348|Energy usage this week was fourteen kilowatt hours, down about eight percent on last week.
+349|There are four devices connected upstairs and seven downstairs, which seems like plenty.
+350|The battery in the back door sensor is at twelve percent and will need replacing soon.
+351|It has been thirty one days since the filter was last changed, which is eleven days too many.
+352|The humidity in the bathroom reached eighty six percent during your shower this morning.
+353|Water usage yesterday was one hundred and forty litres, which is fairly typical.
+354|Three lights, two plugs and one entirely mysterious device are currently switched on.
+355|The loft insulation sensor reports a steady twelve degrees, which is about right for November.
+356|Your average bedtime this week has been eleven forty seven, which is later than you think.
+357|The car has been charging for two hours and is now at seventy eight percent.
+358|There are sixteen unread notifications, most of which you will safely ignore.
+359|The internet has been up for nineteen days without interruption, which is quietly remarkable.
+360|I counted forty two door events today, which does seem like a lot of coming and going.
+361|The kitchen is the warmest room in the house at twenty four degrees, unsurprisingly.
+362|On Monday the recycling goes out, on Wednesday the garden waste, and on Friday everything else.
+363|The first of December falls on a Sunday this year, which complicates matters slightly.
+364|It is the twenty ninth of February, which only happens once every four years.
+365|Between nine and five on weekdays the heating stays off, as you requested.
+366|The sixteenth of August is a Saturday, so the shops will be open until six.
+367|Your appointment is in eleven days, on the third, at twenty past two in the afternoon.
+368|Last Thursday was the coldest day of the month at minus three degrees overnight.
+369|The clocks go forward on the last Sunday in March, so you will lose an hour of sleep.
+370|In the summer months the garden lights stay off until nearly half past nine.
+371|I have been running continuously for two hundred and six days, since the last power cut.
+372|That was the seventh time this month, which is beginning to form a rather clear pattern.
+373|The cupboard under the stairs is warmer than the bedroom, which cannot possibly be right.
+374|Something is moving in the garden, although I suspect it is only the wind in the hedge.
+375|There is a draught coming from somewhere near the front door that I cannot fully account for.
+376|The temperature in the conservatory swings by nine degrees between noon and midnight.
+377|I have lost contact with the sensor in the shed, which has never been especially reliable.
+378|The upstairs landing light has switched itself on twice tonight without any input from me.
+379|Somebody has changed the thermostat schedule, and it was categorically not me.
+380|There is a moose loose about this house, or possibly just a very confident mouse.
+381|The floorboard on the third stair creaks at precisely the same frequency every time.
+382|I have noticed the fridge humming in a slightly different key since Tuesday.
+383|The pattern of your evenings is remarkably consistent, which I find oddly reassuring.
+384|Nothing has happened for two hours and eleven minutes, which is either peaceful or worrying.
+385|Welcome home. The lights are on, the heating is up, and I have been expecting you.
+386|Good night. I shall lock everything, dim the lights, and keep an eye on things until morning.
+387|I will be here if you need anything, quietly monitoring the temperature as usual.
+388|Sleep well. The alarm is set, the doors are locked, and the house is at nineteen degrees.
+389|See you in the morning, assuming the boiler behaves itself overnight.
+390|I hope the day goes well, and do try to remember your umbrella this time.
+391|Take care out there. It is cold, wet, and the pavements are rather slippery.
+392|Enjoy your evening. I have put the lamps on and found something reasonable to listen to.
+393|Have a good afternoon. The house will be warm when you get back, as always.
+394|Right then, I shall leave you to it, and try not to interrupt unnecessarily.
+395|That is everything for now. Do let me know if anything else needs doing.
+396|I am here whenever you need me, which is more often than either of us likes to admit.
+397|Rest well. I will wake you at half past six, whether you appreciate it or not.
+398|Until later then. I shall keep the place standing while you are gone.
+399|Lovely. Another evening of me watching the thermostat while you watch television.
+400|The recipe calls for two hundred grams of flour, three eggs and a generous pinch of salt.
+401|Preheat the oven to one hundred and eighty degrees, then leave it alone for ten minutes.
+402|Simmer gently for twenty minutes, stirring occasionally so it does not catch on the bottom.
+403|You will need roughly half a litre of stock, though a little more never hurt anybody.
+404|Let it rest for five minutes before slicing, no matter how impatient you are feeling.
+405|The bread needs another forty minutes to prove, which is ample time to tidy the kitchen.
+406|Add the onions first, then the garlic, and try not to burn either of them this time.
+407|That has been in the oven for fifty minutes, which is ten minutes longer than the recipe suggested.
+408|The instructions say to whisk continuously, which I appreciate is easier said than done.
+409|Turn the heat down before it boils over, as it did rather memorably last Sunday.
+410|Take the second exit at the roundabout, then continue for about three quarters of a mile.
+411|The journey should take twenty six minutes, assuming the roadworks have finally finished.
+412|There is heavy traffic on the ring road, so I would allow an extra fifteen minutes.
+413|Turn left after the church, then right at the postbox, and it is the third house along.
+414|The nearest petrol station is one point two miles away and is open until eleven.
+415|Your train leaves from platform four in eighteen minutes, which is tight but manageable.
+416|The bus is running nine minutes late, which by local standards is practically punctual.
+417|It is a twelve minute walk, or four minutes if you have forgotten something important.
+418|The car park closes at half past six and charges rather a lot after two hours.
+419|Traffic is moving freely now, so you should arrive at about twenty five past four.
+420|I have been thinking about the temperature in the hallway, which makes no sense at all.
+421|The interesting thing about British weather is how confidently wrong the forecast can be.
+422|There is something quietly satisfying about a house where everything is switched off properly.
+423|I do not experience boredom, though I imagine this is approximately what it would feel like.
+424|People are strange about their heating, insisting on nineteen degrees while wearing three jumpers.
+425|The difference between tidy and organised is considerable, and this house demonstrates neither.
+426|I find the rhythm of the day rather pleasant, even the parts involving the washing machine.
+427|It is remarkable how much can go wrong in a house between midnight and six in the morning.
+428|Every evening follows the same shape, and I have grown unexpectedly fond of it.
+429|The best thing about winter is that nobody argues when I put the heating on.
+430|I have concluded that the cat has learned how to trigger the motion sensor deliberately.
+431|There is a particular quality to the silence at four in the morning that I rather like.
+432|Occasionally I wonder what the boiler thinks about all this, assuming it thinks at all.
+433|The house makes different noises in the cold, which took me a while to get used to.
+434|I would describe the state of the utility room as optimistic rather than organised.
+435|It occurs to me that I know a great deal about you and very little about anything else.
+436|The oddest part of the day is between three and five, when nothing at all happens.
+437|I have developed strong opinions about the front door, which I will keep to myself.
+438|There is no sensible reason for the landing light to be that bright at two in the morning.
+439|Somewhere in this house there is a device drawing four watts and I cannot find it.
+440|The weather does not care about your plans, which is either humbling or infuriating.
+441|I have counted the stairs eleven times and reached three different answers.
+442|The word tolerable is doing considerable work in that sentence, I should point out.
+443|If houses have moods, this one is currently somewhere between content and mildly exasperated.
+444|The kettle, the boiler and the washing machine have never once agreed on anything.
+445|I am reliably informed that this is what people call a quiet Tuesday evening.
+446|There is a certain dignity in switching lights off that nobody else remembers to switch off.
+447|The most useful thing I do all day is probably closing the blinds before the sun gets in.
+448|On balance I would rather be here monitoring the humidity than almost anywhere else.
+449|That is the last thing on the list, and I shall now return to my usual quiet vigilance.
