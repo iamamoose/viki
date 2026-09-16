@@ -15,7 +15,7 @@ We split Home Assistant's voice stack into four stages, and replace
 each one with something better (or at least funnier). Each stage has
 its own section:
 
-1. [Wake word](docs/wakeword.md): We create "Hey VIKI!" as a wake word
+1. [Wake word](docs/wakeword.md): Use our "Hey VIKI!", or [train your own](docs/make-your-own-wakeword.md)
 2. [Speech to text](docs/stt.md): We use Microsoft Azure STT and test handling of regional dialects
 3. [Processing & personality](docs/personality.md): A mixture of automations and optional Gemini LLM
 4. [Text to speech](docs/voice.md): We create a custom anime voice to use with Piper.

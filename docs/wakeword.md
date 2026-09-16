@@ -1,4 +1,4 @@
-# 1. Wakeword — train your own
+# 1. Wakeword
 
 [← Back to VIKI](../README.md) · Next: [Speech-to-Text →](stt.md)
 
@@ -6,20 +6,18 @@
 
 Home Assistant ships with three wakewords: "Hey Mycroft", "Hey Jarvis" and "Okay Nabu". There aren't more because a good wakeword model is hard work. It has to fire for every accent while ignoring the telly, and keeping the false positives down to something sensible takes a lot of tuning. The model, microWakeWord, runs on the ESP32 itself and listens all the time. But you can train your own, given a set of recordings of the wake word and some background noise to train against.
 
-## Tooling — TaterTotterson
+## Using ours
 
-tatertotterson has done the hard part. The microWakeWord Trainer Studio is a local web UI that takes you from phrase, through reviewing your samples, to a trained model, and there's prebuilt satellite firmware too:
+`hey_viki` is in [viki-assets](https://github.com/iamamoose/viki-assets) —
+a `.json` and a `.tflite`, 63KB the pair. Trained on about 40 recordings
+of me and my wife saying it.
 
-- Apple Silicon trainer, the one I used, with GPU/Metal acceleration on an M-series Mac: <https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon>
-- NVIDIA / CUDA Docker trainer if you have a decent GPU instead: <https://github.com/TaterTotterson/microWakeWord-Trainer-Nvidia-Docker>
-- Firmware and model assets for VoicePE / Satellite1 / ReSpeaker: <https://github.com/TaterTotterson/microWakeWords>
+Drop both in `/config/models/`, keeping them together — the JSON
+references the `.tflite` beside it by name. Or point ESPHome straight at
+the raw URLs.
 
-## How I did it
-
-- I recorded about 40 samples of me and my wife saying *"hey Viki"*. It's a distinct enough name, and the extra "hey" keeps the false triggers down. Then a set of background-noise and hard-negative recordings to train against.
-- Setup is a couple of minutes and opens a local web UI.
-- Start the trainer and wait. On my MacBook it took under two hours.
-- You get a `.json` and a `.tflite` out. Drop them somewhere ESPHome can reach, for example `/config/models/`, or point at a raw URL.
+Fair warning: it's tuned to our voices and our living room. If it misses
+you, [make your own](make-your-own-wakeword.md) — it's an afternoon.
 
 ## The ESPHome change
 
@@ -74,6 +72,7 @@ select:
 `i` is the index of the option you picked. ESPHome's select `on_value` hands you both `x`, the label, and `i`, so each step maps to its cutoff. Now I drag it in Settings → Devices & Services, live, without reflashing.
 
 VIKI_ still pipes up at the telly now and then. That's on purpose, mostly.
+
 
 ---
 
