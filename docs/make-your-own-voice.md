@@ -86,6 +86,36 @@ hours on a 3060.
 Export with `piper_train.export_onnx`, copy `training_folder/config.json`
 next to it as `<model>.onnx.json`, and set `dataset`, `length_scale`.
 
+## Give her a mhm
+
+She needs a noise to answer with, and it has to be cloned from *your*
+reference clip or it'll sound like a stranger acknowledging you. Same
+tool as the training set, just one line of text:
+
+```python
+wavs, sr = model.generate_voice_clone(
+    text="Mhm?", language="English", voice_clone_prompt=prompt
+)
+```
+
+Generate a few dozen. The spread between seeds is far wider than you'd
+expect — ours ranged from 0.3 to 2 seconds across the same spelling —
+and the first take is almost never the best. We ran 72 across six
+spellings and twelve seeds.
+
+Pick by measuring, not just by ear. Duration and pitch contour are what
+decide whether it reads as an acknowledgement or a flat grunt; a rising
+contour is the thing that makes it work. Then match its loudness to the
+voice model's own output, or it'll sound oddly timid played straight
+after a sentence.
+
+The same method does a sigh, a sniff, an "ahem".
+
+> 🔇 Don't be tempted to send "mhm" through TTS instead. espeak reads it
+> out as "em aitch em em" — there's a
+> [breakdown](https://github.com/iamamoose/viki-assets/blob/main/docs/sounds.md) of which spellings actually
+> hum and which get spelled out.
+
 ## Things that cost us a day each
 
 **More audio beats more epochs.** Our first attempt was 166 short lines
