@@ -1,15 +1,13 @@
-# VIKI
+# VIKI_
 
-VIKI is a [Home Assistant](https://www.home-assistant.io/) voice
+VIKI_ is a [Home Assistant](https://www.home-assistant.io/) voice
 assistant with a tsundere personality. Fully local custom wake-word,
 custom-trained voice, and opinions of her own.
 
 [Watch the Video from **EMF Camp 2026**](https://media.ccc.de/v/emf2026-88-1-building-a-mostly-local-mildly-judgemental-home-assistant)
 
 If you were at the talk: the [companion notes](docs/emf2026/emf-talk-notes.md)
-collect everything waved at on slides.
-
-> 🚧 This repo is being reorganised — expect things to move around.
+collect everything I waved at on slides.
 
 ## Software
 
@@ -17,14 +15,13 @@ We split Home Assistant's voice stack into four stages. The whole talk
 was just replacing each one with something better (or at least
 funnier). Each stage has its own page:
 
-1. [Wake word](docs/wakeword.md): We train "hey viki" as a wake word
+1. [Wake word](docs/wakeword.md): We create "hey viki" as a wake word
 2. [Speech to text](docs/stt.md): We use Microsoft Azure STT and test handling of regional dialects
 3. [Processing & personality](docs/personality.md): A mixture of automations and optional Gemini LLM
-4. [Text to speech](docs/voice.md): We train a custom anime voice to use with Piper
-
-The trained voice and her sounds live in
+4. [Text to speech](docs/voice.md): We create a custom anime voice to use with Piper
+. The trained voice and her sounds live in
 [viki-assets](https://github.com/iamamoose/viki-assets); if you'd rather
-make your own, the recipe is in [Make your own VIKI_
+make your own, the howto is in [Make your own VIKI_
 voice](docs/make-your-own-voice.md).
 
 ## Hardware
