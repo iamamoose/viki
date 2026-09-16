@@ -27,6 +27,71 @@ who sounds like that, have it read a few hundred lines, then fine-tune
 Piper on the result. No human voice donor anywhere in the chain, which
 is why we can licence her CC BY-SA.
 
+## Replace the "bing" with a "mhm"
+
+Once you have a voice, swap that wake-acknowledgement bing for a custom
+WAV. I made a `mhm` (which, I'm reliably informed, is also the noise my
+wife makes when I ask her anything). Simple ESPHome substitution:
+
+```yaml
+substitutions:
+  wake_word_triggered_sound_file: https://esoom.com/viki/mhm.flac
+```
+
+Rebuild, push, done.
+
+The one in [viki-assets](https://github.com/iamamoose/viki-assets) is
+generated from VIKI_'s own voice, so it matches her rather than sounding
+like a stranger clearing their throat. Host it somewhere ESPHome can
+reach — it fetches the file at boot, so your own server beats a GitHub
+raw URL.
+
+> 🔇 Don't send "mhm" through TTS to get this. espeak reads it out as
+> "em aitch em em". It has to be a file.
+
+---
+
+## Scotland Tomato DLC
+
+The US voice mispronounces things. The grapheme→phoneme step is espeak,
+but it runs *inside* the Piper container, and I'm trying not to fork a
+container. The bodge: feed Home Assistant the phonemes directly.
+
+Generate IPA per accent on the command line:
+
+```bash
+$ espeak-ng -q --ipa -v en-us "tomato"
+təmˈeɪɾoʊ
+
+$ espeak-ng -q --ipa -v en-gb-x-rp "tomato"
+təmˈɑːtəʊ
+
+$ espeak-ng -q --ipa -v en-gb-scotland "tomato"
+təmˈa:toː
+```
+
+Then wrap phonemes in double square brackets anywhere in a Home
+Assistant response and they'll be spoken as-is:
+
+```text
+USA is [[təmˈeɪɾoʊ]]. UK is [[təmˈɑːtəʊ]]. Scotland is [[təmˈa:toː]].
+```
+
+You can also clone the whole voice and just edit the JSON from `en-us`
+to `en-gb-x-rp` (or `en-gb-scotland`) for an instant English / American
+/ Scottish VIKI_. The phonemes won't be perfect — you'd have to train
+with rolling R's etc. — but it's close.
+
+### The HUMF fix
+
+espeak says "hmph" and "baka" badly. Rather than fork the container to
+add custom rules for them, the [LLM system
+prompt](personality.md#adding-an-llm--google-gemini) rewrites them: no
+need for baka, and "hmph" becomes "humf", which comes out as a passable
+*HUMPH!*
+
+---
+
 ## What changed since the talk
 
 The EMF version used IndexTTS to clone the voice and set its expression,
