@@ -35,19 +35,18 @@ wife makes when I ask her anything). Simple ESPHome substitution:
 
 ```yaml
 substitutions:
-  wake_word_triggered_sound_file: https://esoom.com/viki/mhm.flac
+  wake_word_triggered_sound_file: https://raw.githubusercontent.com/iamamoose/viki-assets/main/voices/viki/mhmm.wav
 ```
 
 Rebuild, push, done.
 
-The one in [viki-assets](https://github.com/iamamoose/viki-assets) is
-generated from VIKI_'s own voice, so it matches her rather than sounding
-like a stranger clearing their throat. Host it somewhere ESPHome can
-reach — it fetches the file at boot, so your own server beats a GitHub
-raw URL.
+That's the same shape as the stock Voice PE config, which points at a
+GitHub raw URL too, so ours drops straight in. Swap it for your own
+server if you'd rather not depend on GitHub. It's in the release zip as
+well, alongside the voice, if you're grabbing that anyway.
 
-> 🔇 Don't send "mhm" through TTS to get this. espeak reads it out as
-> "em aitch em em". It has to be a file.
+This one is generated from VIKI_'s own voice, so she sounds like herself
+acknowledging you.
 
 ---
 
