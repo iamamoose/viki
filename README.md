@@ -26,4 +26,3 @@ The devices the EMF Camp talk build runs on are off-the-shelf ESP32 voice
 satellites running ESPHome: a Home Assistant Voice PE, an M5Stack ATOM Echo, and the
 AtomS3R "pyramid". See [Hardware](docs/hardware.md) for each option and where to buy.
 
-## [Apache-2.0](LICENSE) Licence
