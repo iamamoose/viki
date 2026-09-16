@@ -1,7 +1,7 @@
 # Hardware
 
-> 📻 **As presented at EMF Camp 2026.** Frozen as a record of the talk —
-> the project has moved on since. Current: [Hardware](../hardware.md).
+> 📻 **This is VIKI_ as of the EMF Camp talk, July 2026.** Kept as a
+> record of what was presented. For the latest: [Hardware](../hardware.md).
 
 [← Back to talk notes](emf-talk-notes.md)
 

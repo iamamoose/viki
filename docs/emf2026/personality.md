@@ -1,7 +1,7 @@
 # 3. Processing — give VIKI_ a personality
 
-> 📻 **As presented at EMF Camp 2026.** Frozen as a record of the talk —
-> the project has moved on since. Current: [Processing & personality](../personality.md).
+> 📻 **This is VIKI_ as of the EMF Camp talk, July 2026.** Kept as a
+> record of what was presented. For the latest: [Processing & personality](../personality.md).
 
 [← Speech-to-Text](stt.md) · [Back to talk notes](emf-talk-notes.md) · Next: [Text-to-Speech →](voice.md)
 
@@ -117,7 +117,6 @@ actions:
           I would comment on the temperature, but someone hasn’t configured it properly.
         {% endif %}
       {% endset %}
-
 
       {% set responses = [
               "Good morning! " ~ weather_comment ~ " " ~ temp_comment,

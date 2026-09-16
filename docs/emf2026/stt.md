@@ -1,7 +1,7 @@
 # 2. Speech-to-Text — is local good enough?
 
-> 📻 **As presented at EMF Camp 2026.** Frozen as a record of the talk —
-> the project has moved on since. Current: [Speech-to-Text](../stt.md).
+> 📻 **This is VIKI_ as of the EMF Camp talk, July 2026.** Kept as a
+> record of what was presented. For the latest: [Speech-to-Text](../stt.md).
 
 [← Wakeword](wakeword.md) · [Back to talk notes](emf-talk-notes.md) · Next: [Processing →](personality.md)
 

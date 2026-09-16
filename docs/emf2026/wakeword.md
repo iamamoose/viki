@@ -1,7 +1,7 @@
 # 1. Wakeword — train your own
 
-> 📻 **As presented at EMF Camp 2026.** Frozen as a record of the talk —
-> the project has moved on since. Current: [Wake word](../wakeword.md).
+> 📻 **This is VIKI_ as of the EMF Camp talk, July 2026.** Kept as a
+> record of what was presented. For the latest: [Wake word](../wakeword.md).
 
 [← Back to talk notes](emf-talk-notes.md) · Next: [Speech-to-Text →](stt.md)
 

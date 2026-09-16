@@ -1,7 +1,7 @@
 # 4. Text-to-Speech — a custom voice for VIKI_
 
-> 📻 **As presented at EMF Camp 2026.** Frozen as a record of the talk —
-> the project has moved on since. Current: [Text-to-Speech](../voice.md).
+> 📻 **This is VIKI_ as of the EMF Camp talk, July 2026.** Kept as a
+> record of what was presented. For the latest: [Text-to-Speech](../voice.md).
 
 [← Processing](personality.md) · [Back to talk notes](emf-talk-notes.md)
 

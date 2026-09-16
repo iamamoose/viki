@@ -1,5 +1,8 @@
 # Meet VIKI_: a mostly-local, mildly judgemental voice assistant
 
+> 📻 **This is VIKI_ as of the EMF Camp talk, July 2026.** Kept as a
+> record of what was presented. For the latest: [VIKI_](../../README.md).
+
 > Companion notes for the Electromagnetic Fields July 2026 talk *"Building a mostly-local, mildly judgemental home assistant (aka VIKI_'s origin story)"*. [Watch the Video](https://media.ccc.de/v/emf2026-88-1-building-a-mostly-local-mildly-judgemental-home-assistant)
 
 This is the story (and the links, configs and bodges) behind replacing my Home Assistant plus Alexa setup with a custom-voiced, slightly tsundere Home Assistant voice personality. Kept local and cheap where possible, without local LLMs.
@@ -28,7 +31,6 @@ Where it lands: mostly local, no local LLM, about £2 a month. Microsoft for STT
 Character arc: VIKI_ started tsundere (cold, prickly — *"I-it's not like I wanted to help you"*), and I'm experimenting with deredere (warmer, more helpful, a one-word prompt change). The trade-off is that deredere keeps inventing pet names (sweetie, poppet), but at least they're for everyone. LLM sessions are short and she doesn't remember across them; this is a fun voice assistant, not a companion.
 
 *Built by joining a lot of existing pieces together. I didn't find anything else that went quite this far. Questions welcome mark@esoom.com.*
-
 
 ---
 
