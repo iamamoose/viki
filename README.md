@@ -4,15 +4,18 @@ VIKI_ is a [Home Assistant](https://www.home-assistant.io/) voice
 assistant with a tsundere personality. Fully local custom wake-word,
 custom-trained voice, and opinions of her own.
 
-[Watch the Video from **EMF Camp 2026**](https://media.ccc.de/v/emf2026-88-1-building-a-mostly-local-mildly-judgemental-home-assistant).  The [companion notes](docs/emf2026/emf-talk-notes.md) collect everything I waved at on slides, some of the details have been updated since though, see below.
+Designed to run on usual Home Assistant hardware like a Raspberry PI, with
+some optional cloud services (details and trade-offs described as we go).
+
+[Watch the Video from **EMF Camp 2026**](https://media.ccc.de/v/emf2026-88-1-building-a-mostly-local-mildly-judgemental-home-assistant).  The [companion notes](docs/emf2026/emf-talk-notes.md) collect everything I waved at on slides, some of the details have been updated since though, see below for the most recent.
 
 ## Software
 
-We split Home Assistant's voice stack into four stages. The whole talk
-was just replacing each one with something better (or at least
-funnier). Each stage has its own page:
+We split Home Assistant's voice stack into four stages, and replace
+each one with something better (or at least funnier). Each stage has
+its own section:
 
-1. [Wake word](docs/wakeword.md): We create "hey viki" as a wake word
+1. [Wake word](docs/wakeword.md): We create "Hey VIKI!" as a wake word
 2. [Speech to text](docs/stt.md): We use Microsoft Azure STT and test handling of regional dialects
 3. [Processing & personality](docs/personality.md): A mixture of automations and optional Gemini LLM
 4. [Text to speech](docs/voice.md): We create a custom anime voice to use with Piper.
@@ -20,9 +23,7 @@ funnier). Each stage has its own page:
 ## Hardware
 
 The devices the EMF Camp talk build runs on are off-the-shelf ESP32 voice
-satellites running ESPHome: a Home Assistant Voice PE, an M5Stack ATOM Echo, or the
+satellites running ESPHome: a Home Assistant Voice PE, an M5Stack ATOM Echo, and the
 AtomS3R "pyramid". See [Hardware](docs/hardware.md) for each option and where to buy.
 
-## Licence
-
-[Apache-2.0](LICENSE)
+## [Apache-2.0](LICENSE) Licence
