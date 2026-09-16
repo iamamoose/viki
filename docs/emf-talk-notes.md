@@ -16,10 +16,10 @@ We split Home Assistant's voice stack into four stages. The whole talk was just 
 
 | Stage | Default | VIKI_ June 2026 | Page |
 |---|---|---|---|
-| 🔔 **Wakeword** | microWakeWord (ESPHome) | Trained my own `"hey_viki"` | [./wakeword.md](./wakeword.md) |
-| 🗣️ **Speech-to-Text** | faster-whisper (tiny-int8) | Switched to Azure STT (Microsoft) | [./stt.md](./stt.md) |
-| 🧠 **Processing** | HA intents | Personality automations + optional Gemini LLM | [./personality.md](./personality.md) |
-| 🔊 **Text-to-Speech** | Piper (default voice) | Piper (Trained a custom anime `viki` voice) | [./voice.md](./voice.md) |
+| 🔔 **Wakeword** | microWakeWord (ESPHome) | Trained my own `"hey_viki"` | [./emf2026/wakeword.md](./emf2026/wakeword.md) |
+| 🗣️ **Speech-to-Text** | faster-whisper (tiny-int8) | Switched to Azure STT (Microsoft) | [./emf2026/stt.md](./emf2026/stt.md) |
+| 🧠 **Processing** | HA intents | Personality automations + optional Gemini LLM | [./emf2026/personality.md](./emf2026/personality.md) |
+| 🔊 **Text-to-Speech** | Piper (default voice) | Piper (Trained a custom anime `viki` voice) | [./emf2026/voice.md](./emf2026/voice.md) |
 
 The hardware is the easy part: see [Hardware](./hardware.md) for the voice satellites and where to buy them.
 

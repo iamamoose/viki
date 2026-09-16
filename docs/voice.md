@@ -4,148 +4,46 @@
 
 ---
 
-Piper does local, phoneme-based TTS — fast enough even on a Pi. There are heavier local models that do real-time TTS, but they want GPUs or fast processors. We stick with Piper, which has a selection of voices across languages.
+Piper does local, phoneme-based TTS — fast enough even on a Pi. There are
+heavier local models that do real-time TTS, but they want GPUs or fast
+processors. We stick with Piper, which has a selection of voices across
+languages.
 
-You can also train your own. Some people have done the Enterprise computer or Commander Data; we watch a lot of anime, so we wanted something more endearing: a custom anime-style voice.
+You can also train your own. Some people have done the Enterprise
+computer or Commander Data; we watch a lot of anime, so we wanted
+something more endearing.
 
-> 🎙️ Make your own VIKI, not ours. Honestly, you don't want our VIKI, you want *yours*. Keep running the voice-design script (step 1) until you land on a voice you love, then train that one. That's the fun of it: your VIKI ends up unique to you. Everything you need is below, and it's an afternoon's work.
+> 🎙️ Make your own VIKI, not ours. Honestly, you don't want our VIKI,
+> you want *yours*. The whole recipe is published, so keep generating
+> voices until you land on one you love, then train that one.
 
-## The steps
+## The voice, and how to build your own
 
-A few stages, running forward: design a voice from a text prompt, clone it and set its expression, generate a couple of hundred sample phrases in that voice, then train a Piper model on them and install it in Home Assistant.
+Everything lives in
+**[viki-assets](https://github.com/iamamoose/viki-assets)**:
 
-### Step 1 — Design the voice — Qwen3-TTS
-**<https://github.com/QwenLM/Qwen3-TTS>**
+- the trained Piper voice, ready to drop into Home Assistant
+- her non-speech noises, like the `mhm` she answers with
+- the full recipe — scripts, phrase list, and the reference clip she was
+  cloned from
 
-I used to use ElevenLabs; Qwen3-TTS does the job now. Ask ChatGPT for a voice-design prompt ("a bright, expressive, light anime-style, gender-neutral voice…"), tweak it, then run a few lines of Python to render a sample WAV. It ran fine on a modest NVIDIA 3060, minutes not hours.
+Short version: describe a voice in words, let Qwen3-TTS invent someone
+who sounds like that, have it read a few hundred lines, then fine-tune
+Piper on the result. No human voice donor anywhere in the chain, which
+is why we can licence her CC BY-SA.
 
-It's a voice-design model: no seed, a different voice every run, so keep generating until you like one. Keep the WAV, you'll clone it next.
+## What changed since the talk
 
-> 🐍 Full script: [`scripts/voice_design.py`](../scripts/voice_design.py).
+The EMF version used IndexTTS to clone the voice and set its expression,
+and a smaller phrase list. It worked, but the phrase list was too short
+and the result warbled — more audio turned out to matter far more than
+more training.
 
-```python
-import torch, soundfile as sf
-from qwen_tts import Qwen3TTSModel
+The pipeline is now Qwen3-TTS end to end, with a phrase list about two
+and a half times the size.
 
-model = Qwen3TTSModel.from_pretrained(
-    "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
-    device_map="cuda:0", dtype=torch.bfloat16,
-    attn_implementation="flash_attention_2",
-)
-wavs, sr = model.generate_voice_design(
-    language="English",
-    text="Oh, you're finally back. I already turned the lights on and "
-         "started the kettle. Not because I was waiting or anything. Welcome Home.",
-    instruct="Gender: gender-neutral. Age: early 20s. Accent: clear British "
-             "English. Pitch: neutral mid-range, sitting between alto and tenor. "
-             "Pace: brisk and lively. Emotion: sharp, witty, with a playful "
-             "tsundere edge. Characteristics: bright, expressive, light and agile "
-             "timbre, anime-style. Use case: quick-tempered AI home assistant.",
-)
-sf.write("voice_design.wav", wavs[0], sr)
-```
-
-### Step 2 — Clone + expression — IndexTTS2
-**<https://github.com/index-tts/index-tts>**
-
-Clones your designed voice and lets you dial the expression, which is great. "Super happy and enthusiastic" tires you out fast — I want competent, not exhausting — so I went melancholic and calm. Needs a modest GPU.
-
-### Step 3 — Build the training dataset
-
-Training needs a couple of hundred phrases + audio for each. There's a sample `metadata.csv` (pipe-delimited `id|text`) — mine is [`scripts/metadata.csv`](../scripts/metadata.csv), the usual phonetically-balanced sentences plus Home-Assistant-specific lines I added:
-
-```text
-1|The quick brown fox jumps over the lazy dog.
-2|She sells seashells by the seashore.
-3|How much wood would a woodchuck chuck?
-...
-171|Your kettle has boiled.
-172|The outside temperature is 10 degrees.
-173|Hello from Home Assistant.
-174|I've turned on the kitchen kettle.
-175|I've turned off the living room lights.
-176|You have seven items on your shopping list.
-```
-
-A small Python script — [`scripts/generate_samples.py`](../scripts/generate_samples.py) — generates all ~176 WAVs via IndexTTS in a few minutes, cloning the designed voice at *melancholic + calm* expression, with a fixed seed so runs are repeatable.
-
-> ⚠️ You must listen to every one. If the audio doesn't match the text, training fails, and that takes far longer than generating them. Two regenerated wrong the first time. IndexTTS also leaves gaps that turn into. Strange. Gaps. In your. Output. — `interval_silence=0` and `max_text_tokens_per_segment=200` cut most of them at generation, but I still run a second script, [`scripts/trim_gaps.py`](../scripts/trim_gaps.py), afterwards: it's punctuation-aware, so it collapses the spurious tokenizer pauses while *protecting* the deliberate comma / full-stop ones.
-
-### Step 4 — Train + install — TextyMcSpeechy
-**<https://github.com/domesticatedviking/TextyMcSpeechy>**
-
-Ships a container and scripts that do the heavy lifting. Feed it the dataset and it trains, getting better over time; you can listen as it goes. On my PC there was little benefit past about 6 hours. You end up with an `.onnx` and a `.json`, under 100 MB.
-
-Installing it into the Piper add-on has a few exact requirements (see the [official Piper add-on docs](https://github.com/home-assistant/addons/blob/master/piper/DOCS.md) and TextyMcSpeechy's [HA OS guide](https://github.com/domesticatedviking/TextyMcSpeechy/blob/main/docs/using_custom_voices_in_home_assistant_os.md)):
-
-1. Name the files to Piper's scheme `<language>_<REGION>-<name>-<quality>` (quality is one of `x_low`, `low`, `medium`, `high`), e.g. `en_US-viki-medium.onnx` and `en_US-viki-medium.onnx.json`. The two names must match exactly.
-2. Edit the `dataset` field inside the `.onnx.json` to match that name, or it shows up wrong:
-
-   ```jsonc
-   {
-     "dataset": "en_US-viki-medium",
-     "audio": { "sample_rate": 22050, "quality": "Medium" },
-     "espeak": { "voice": "en-us" },
-     ...
-   }
-   ```
-3. Drop both files in `/share/piper/` (create the folder if it doesn't exist). On HAOS the web UI can't write there, so use the FTP, Samba or SSH add-on to upload.
-4. Restart the Piper add-on *and* reload the Wyoming Protocol integration, otherwise neither picks up the new model.
-
-```bash
-# After renaming + editing the dataset field, upload to:
-/share/piper/en_US-viki-medium.onnx
-/share/piper/en_US-viki-medium.onnx.json
-# Then: restart Piper add-on, and reload Settings → Devices & Services → Wyoming Protocol
-```
-
-> ⚠️ Where the voice appears: because of how the Piper add-on builds its list, your custom voice will *not* show in the *Settings → Add-ons → Piper → Configuration* dropdown. It only appears under Settings → Voice assistants when you create or edit an assistant using Piper as the TTS engine; use the Try voice button there to test it. (Known limitation, [issue #3914](https://github.com/home-assistant/addons/issues/3914).)
-
-You don't have to pick just one voice — different speakers (or whoever's home) can use different voices, and you can set up different pipelines too.
-
-> ⚠️ I couldn't get en-GB to train properly, so the shipped voice is en-US, which is why VIKI_ says "gare-aaj" not "garage" and adds American tomatoes to the shopping list. The fix is the [Scotland Tomato DLC](#scotland-tomato-dlc) below.
-
-## Replace the "bing" with a "mhm"
-
-Once you have a voice, swap that wake-acknowledgement bing for a custom WAV. I made a `mhm` (which, I'm reliably informed, is also the noise my wife makes when I ask her anything). Simple ESPHome substitution:
-
-```yaml
-substitutions:
-  wake_word_triggered_sound_file: https://esoom.com/viki/mhm.flac
-```
-
-Rebuild, push, done.
-
----
-
-## Scotland Tomato DLC
-
-The US voice mispronounces things. The grapheme→phoneme step is espeak, but it runs *inside* the Piper container, and I'm trying not to fork a container. The bodge: feed Home Assistant the phonemes directly.
-
-Generate IPA per accent on the command line:
-
-```bash
-$ espeak-ng -q --ipa -v en-us "tomato"
-təmˈeɪɾoʊ
-
-$ espeak-ng -q --ipa -v en-gb-x-rp "tomato"
-təmˈɑːtəʊ
-
-$ espeak-ng -q --ipa -v en-gb-scotland "tomato"
-təmˈa:toː
-```
-
-Then wrap phonemes in double square brackets anywhere in a Home Assistant response and they'll be spoken as-is:
-
-```text
-USA is [[təmˈeɪɾoʊ]]. UK is [[təmˈɑːtəʊ]]. Scotland is [[təmˈa:toː]].
-```
-
-You can also clone the whole voice and just edit the JSON from `en-us` to `en-gb-x-rp` (or `en-gb-scotland`) for an instant English / American / Scottish VIKI_. The phonemes won't be perfect — you'd have to train with rolling R's etc. — but it's close.
-
-### The HUMF fix
-
-espeak says "hmph" and "baka" badly. Rather than fork the container to add custom rules for them, the [LLM system prompt](personality.md#adding-an-llm--google-gemini) rewrites them: no need for baka, and "hmph" becomes "humf", which comes out as a passable *HUMPH!*
+> 📻 The version as presented, unchanged: [EMF 2026
+> notes](emf2026/voice.md).
 
 ---
 

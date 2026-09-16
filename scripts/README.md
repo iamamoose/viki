@@ -1,5 +1,11 @@
 # scripts — the glue
 
+> 📻 **These are the EMF 2026 scripts**, built around IndexTTS. The voice
+> pipeline has since moved to Qwen3-TTS end to end — see
+> [viki-assets](https://github.com/iamamoose/viki-assets) for the current
+> scripts and the larger phrase list. `metadata.csv` here is the shorter
+> original; it trains, but the result warbles.
+
 The whole project is mostly joining existing pieces together with a few glue
 scripts. These are the Python bits referenced in the talk, for training VIKI's
 custom [Text-to-Speech](../docs/voice.md) voice. They run on a PC with a
