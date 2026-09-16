@@ -111,10 +111,34 @@ after a sentence.
 
 The same method does a sigh, a sniff, an "ahem".
 
-> 🔇 Don't be tempted to send "mhm" through TTS instead. espeak reads it
-> out as "em aitch em em" — there's a
-> [breakdown](https://github.com/iamamoose/viki-assets/blob/main/docs/sounds.md) of which spellings actually
-> hum and which get spelled out.
+### Why it's a file and not TTS
+
+Don't be tempted to have the voice say "mhm" instead. espeak, which
+Piper uses to turn text into phonemes, doesn't recognise most spellings
+of a hum and reads them out as letters:
+
+```
+mhm     ->  ,Em,eItS'Em      "em aitch em"
+mhmm    ->  ,Em,eItS,Em'Em   "em aitch em em"
+Mm      ->  ,Em'Em           "em em"
+Hm      ->  ,eItS'Em         "aitch em"
+```
+
+Three spellings actually hum:
+
+```
+Hmm     ->  h'@m
+Uh-huh  ->  'Vh'V
+M-hmm   ->  'Emh@m           the letter M, then a hum
+```
+
+So `Hmm.` works if you want one generated live. Everything that looks
+more like the noise you want gets spelled out. A recorded file sidesteps
+it entirely.
+
+Note the spelling we fed the *cloning* model was `Mhm?` — one espeak
+would have spelled out, which doesn't matter because Qwen doesn't use
+espeak.
 
 ## Things that cost us a day each
 
