@@ -16,8 +16,11 @@ endearing.
 ## Using our VIKI_
 
 The trained voice, her non-speech noises and install instructions are in
-**[viki-assets](https://github.com/iamamoose/viki-assets)**. Download the
-release, drop two files into the Piper add-on, done.
+**[viki-assets](https://github.com/iamamoose/viki-assets)**. You need to
+put the two files (.onnx and .onnx.json) into the /share/piper/ directory
+on your home assistant server. In "applications" reload Piper, in "devices"
+"Wyoming" reload Piper, and then you can select the new voice in "Voice
+Assistants".
 
 ## Or make your own
 
