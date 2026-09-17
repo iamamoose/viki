@@ -5,12 +5,13 @@
 ---
 
 Piper does local, phoneme-based TTS which is fast enough even on a
-Raspberry PI. There are
-heavier local models that do real-time TTS, but they want GPUs or fast
-processors. We stick with Piper.
+Raspberry PI. There are heavier local models that do real-time TTS,
+but they want GPUs or fast processors. We stick with Piper.
 
-We stick with Piper which comes with many voices but you can also train your own.
-Some people have done the Enterprise computer or Commander Data; we watch a lot of anime, so we wanted something more endearing.
+We stick with Piper which comes with many voices but you can also
+train your own.  Some people have done the Enterprise computer or
+Commander Data; we watch a lot of anime, so we wanted something more
+endearing.
 
 ## Using our VIKI_
 
@@ -22,10 +23,9 @@ release, drop two files into the Piper add-on, done.
 
 Describe a voice in words, let Qwen3-TTS invent someone who sounds like
 that, have it read a few hundred lines, then fine-tune Piper on the
-result. No human voice donor anywhere in the chain, which is why we can
-licence ours CC BY-SA — and yours is yours.
+result. 
 
-> 🎛️ Full recipe, including the mistakes that cost us days:
+> 🎛️ Full instructions, including the mistakes that cost us days:
 > [Make your own VIKI_ voice](make-your-own-voice.md).
 
 ## Replace the "bing" with a "mhm"
@@ -51,20 +51,18 @@ acknowledging you.
 
 ---
 
-## Scotland Tomato DLC
+## Tweaking pronunciations (Humph!)
 
-The US voice mispronounces things. The grapheme→phoneme step is espeak,
-but it runs *inside* the Piper container, and I'm trying not to fork a
-container. The bodge: feed Home Assistant the phonemes directly.
+When we first made VIKI_ we hit a bug in training and couldn't make a
+en-GB voice, so we ended up with American versions of 'tomato' being
+added to our shopping list.  We've since fixed that.
 
-> 🔧 She used to be en-US, and this section existed because of it.
-> TextyMcSpeechy's en-GB config sets an espeak voice piper rejects, so
-> en-GB training silently did nothing — see [Make your own VIKI_
-> voice](make-your-own-voice.md) and [TextyMcSpeechy#68](https://github.com/domesticatedviking/TextyMcSpeechy/pull/68). With
-> `en-gb-x-rp` she trains properly and says "garage" and "tomato"
-> correctly on her own, so this is now a party trick rather than a fix.
+However because Piper runs in a container in Home Assistant we can't
+give it any espeak rules to fix other words without forking and
+maintaining our own container.  So we can do it with a hack instead.
 
-Still the trick for doing accents deliberately, mind.
+Firstly, if you want to have automations have different pronunciations
+you can feed Home Assistant the phonemes directly.
 
 Generate IPA per accent on the command line:
 
@@ -86,31 +84,27 @@ Assistant response and they'll be spoken as-is:
 USA is [[təmˈeɪɾoʊ]]. UK is [[təmˈɑːtəʊ]]. Scotland is [[təmˈa:toː]].
 ```
 
-You can also clone the whole voice and just edit the JSON from `en-us`
-to `en-gb-x-rp` (or `en-gb-scotland`) for an instant English / American
-/ Scottish VIKI_. The phonemes won't be perfect — you'd have to train
-with rolling R's etc. — but it's close.
+You can also clone the whole voice and just edit the JSON from `en-gb-x-rp`
+to `en-us` (or `en-gb-scotland`) for an instant English / American
+/ Scottish VIKI_. The phonemes won't be perfect but it's close!
 
-### The HUMF fix
-
-espeak says "hmph" and "baka" badly. Rather than fork the container to
-add custom rules for them, the [LLM system
-prompt](personality.md#adding-an-llm--google-gemini) rewrites them: no
-need for baka, and "hmph" becomes "humf", which comes out as a passable
-*HUMPH!*
+Secondly, espeak says "hmph" by spelling out the letters, and says
+"baka" badly. We fix this by altering our [LLM system
+prompt](personality.md#adding-an-llm--google-gemini) to rewrite them: no
+need for baka, and "hmph" becomes "humf", which comes out as a
+passable *HUMPH!*
 
 ---
 
 ## What changed since the talk
 
-The EMF version used IndexTTS to clone the voice and set its expression,
+- The EMF version used IndexTTS to clone the voice and set its expression,
 and a smaller phrase list. It worked, but the phrase list was a little
 too short and IndexTTS created voices have license conditions.
-
 The pipeline is now Qwen3-TTS end to end, with a phrase list about two
 and a half times the size.
 
-She's also en-GB now rather than en-US, trained from `en_GB/alba` instead
+- She's also en-GB now rather than en-US, trained from `en_GB/alba` instead
 of `en_US/ljspeech`, which is what fixed the pronunciation.
 
 > 📻 The version as presented, unchanged: [EMF 2026

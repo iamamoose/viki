@@ -102,18 +102,7 @@ wavs, sr = model.generate_voice_clone(
 )
 ```
 
-Generate a few dozen. The spread between seeds is far wider than you'd
-expect — ours ranged from 0.3 to 2 seconds across the same spelling —
-and the first take is almost never the best. We ran 72 across six
-spellings and twelve seeds.
-
-Pick by measuring, not just by ear. Duration and pitch contour are what
-decide whether it reads as an acknowledgement or a flat grunt; a rising
-contour is the thing that makes it work. Then match its loudness to the
-voice model's own output, or it'll sound oddly timid played straight
-after a sentence.
-
-The same method does a sigh, a sniff, an "ahem".
+Generate a few dozen and choose by ear.
 
 ### Why it's a file and not TTS
 
