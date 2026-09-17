@@ -57,13 +57,14 @@ The US voice mispronounces things. The grapheme→phoneme step is espeak,
 but it runs *inside* the Piper container, and I'm trying not to fork a
 container. The bodge: feed Home Assistant the phonemes directly.
 
-> 🔧 We now know why she was en-US in the first place: TextyMcSpeechy's
-> en-GB config uses an espeak voice piper rejects, so en-GB training
-> silently did nothing. Fixed by setting `en-gb-x-rp` — see [Make your
-> own VIKI_ voice](make-your-own-voice.md) and
-> [TextyMcSpeechy#68](https://github.com/domesticatedviking/TextyMcSpeechy/pull/68). Train en-GB and most of this section stops
-> being necessary, though it's still the trick for doing accents on
-> purpose.
+> 🔧 She used to be en-US, and this section existed because of it.
+> TextyMcSpeechy's en-GB config sets an espeak voice piper rejects, so
+> en-GB training silently did nothing — see [Make your own VIKI_
+> voice](make-your-own-voice.md) and [TextyMcSpeechy#68](https://github.com/domesticatedviking/TextyMcSpeechy/pull/68). With
+> `en-gb-x-rp` she trains properly and says "garage" and "tomato"
+> correctly on her own, so this is now a party trick rather than a fix.
+
+Still the trick for doing accents deliberately, mind.
 
 Generate IPA per accent on the command line:
 
@@ -108,6 +109,9 @@ too short and IndexTTS created voices have license conditions.
 
 The pipeline is now Qwen3-TTS end to end, with a phrase list about two
 and a half times the size.
+
+She's also en-GB now rather than en-US, trained from `en_GB/alba` instead
+of `en_US/ljspeech`, which is what fixed the pronunciation.
 
 > 📻 The version as presented, unchanged: [EMF 2026
 > notes](emf2026/voice.md).
