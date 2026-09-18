@@ -112,8 +112,9 @@ too short and IndexTTS created voices have license conditions.
 The pipeline is now Qwen3-TTS end to end, with a phrase list about two
 and a half times the size.
 
-- She's also en-GB now rather than en-US, trained from `en_GB/alba` instead
-of `en_US/ljspeech`, which is what fixed the pronunciation.
+- She's also en-GB now rather than en-US, trained from
+`en_GB/jenny_dioco` instead of `en_US/ljspeech`, which is what fixed the
+pronunciation.
 
 > 📻 The version as presented, unchanged: [EMF 2026
 > notes](emf2026/voice.md).

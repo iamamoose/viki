@@ -17,7 +17,7 @@ description ──▶ Qwen3-TTS VoiceDesign ──▶ reference clip
                                               │
                                     ~22 minutes of audio
                                               │
-                        Piper fine-tune from en_GB/alba
+                     Piper fine-tune from en_GB/jenny_dioco
                                               │
                                 en_GB-viki-medium.onnx
 ```
@@ -66,8 +66,8 @@ line so you can regenerate any clip identically.
 
 ## 3. Train Piper
 
-From the `en_GB/alba/medium` checkpoint — British and female already,
-so there's less distance to travel than from the en_US default:
+From the `en_GB/jenny_dioco/medium` checkpoint — British and female
+already, so there's less distance to travel than from the en_US default:
 
 ```
 python -m piper_train \
@@ -75,17 +75,22 @@ python -m piper_train \
   --accelerator gpu --devices 1 \
   --batch-size 5 \
   --validation-split 0.0 --num-test-examples 0 \
-  --max_epochs 5180 \
+  --max_epochs 4768 \
   --resume_from_checkpoint <base checkpoint> \
   --checkpoint-epochs 5 \
   --precision 32 --quality medium
 ```
 
-VIKI is epoch 5179. Alba's own checkpoint is epoch 4179, so that's about
-1,000 epochs of fine-tuning on top — roughly 8 hours on a 3060. Starting
-from a voice that's already close to your target buys you a lot; the
+VIKI is epoch 4764. jenny_dioco's own checkpoint is epoch 2748, so that's
+about 2,000 epochs of fine-tuning on top — roughly 15 hours on a 3060.
+Starting from a voice already close to your target buys you a lot; the
 earlier en_US/ljspeech attempt needed 3,400 epochs and 26 hours to get
-somewhere comparable.
+somewhere worse.
+
+We tried `alba` as well, with the same dataset and the same 2,000 epochs
+of fine-tuning. Both work; jenny_dioco came out better to our ears. Worth
+trying more than one base — it costs a night each and they are not
+interchangeable.
 
 Export with `piper_train.export_onnx`, copy `training_folder/config.json`
 next to it as `<model>.onnx.json`, and set `dataset`, `length_scale`.
