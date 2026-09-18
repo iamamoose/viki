@@ -9,7 +9,7 @@ Home Assistant ships with three wakewords: "Hey Mycroft", "Hey Jarvis" and "Okay
 ## Using ours
 
 `hey_viki` is in [viki-assets](https://github.com/iamamoose/viki-assets) —
-a `.json` and a `.tflite`, 63KB the pair. Trained on about 40 recordings
+a `.json` and a `.tflite`. Training included 40+ recordings
 of me and my wife saying it.
 
 Drop both in `/config/models/`, keeping them together — the JSON
