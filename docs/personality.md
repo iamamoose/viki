@@ -23,44 +23,50 @@ Many requests are the same few things — lights on/off, heating, timers — so 
 These are the commands for our WeeKett wifi kettle. Add it in the UI or paste the YAML. The trigger deliberately accepts the common STT mishears (`Boil|Oil`, `kettle|cattle`) we saw in the [STT quiz](stt.md):
 
 ```yaml
-alias: Voice - tea
+alias: VIKI_ personality boil the kettle
+description: ''
 triggers:
   - trigger: conversation
     command:
-      - (Boil|Oil) (the) (kettle|cattle)
+      - '[please] (Boil|Oil) [the] (kettle|cattle) [please]'
       - make (tea|coffee)
-      - (tea|coffee) time
-      - turn on (the) (kettle|cattle)
+      - (Tea|Coffee) time
+      - turn on [the] (kettle|cattle)
+    enabled: true
 conditions: []
 actions:
   - action: water_heater.turn_on
+    metadata: {}
     target:
       entity_id: water_heater.kettle_3_kettle
     data: {}
-  - set_conversation_response: |
-      {%- set raw_temp = state_attr('water_heater.kettle_3_kettle','current_temperature') | float(default=none) -%}
-      {%- set temp = (raw_temp | round(0) | int) if raw_temp is not none else none -%}
-      {%- set base = [
-        "The kettle is on.",
-        "Kettle activated.",
-        "Boiling sequence initiated.",
-        "Heating water.",
-        "Hot beverages are in progress."
-      ] | random -%}
-      {%- if temp is not none -%}
-        {%- if temp < 40 -%}
-          {%- set comment = " Water temperature is " ~ temp ~ " degrees. It has a long way to go." -%}
-        {%- elif temp < 80 -%}
-          {%- set comment = " Currently " ~ temp ~ " degrees. Heating steadily." -%}
-        {%- elif temp < 96 -%}
-          {%- set comment = " " ~ temp ~ " degrees. Almost there." -%}
-        {%- else -%}
-          {%- set comment = " " ~ temp ~ " degrees. It is effectively boiling." -%}
-        {%- endif -%}
-      {%- else -%}
-        {%- set comment = "" -%}
-      {%- endif -%}
-      {{ base ~ comment }}
+  - set_conversation_response: |2
+            {%- set raw_temp = state_attr('water_heater.kettle_3_kettle','current_temperature')  | float(default=none) -%}
+            {%- set temp = (raw_temp | round(0) | int) if raw_temp is not none else none -%}
+            
+            {%- set base = [
+              "Fine. The kettle is on.",
+              "Kettle activated. Again.",
+              "Boiling sequence initiated. Reluctantly.",
+              "Heating water. The button was right there. ",
+              "Hot beverages are in progress."
+            ] | random -%}
+
+            {%- if temp is not none -%}
+              {%- if temp < 40 -%}
+                {%- set comment = " Water temperature is " ~ temp ~ " degrees. It has a long way to go." -%}
+              {%- elif temp < 80 -%}
+                {%- set comment = " Currently " ~ temp ~ " degrees. Heating steadily." -%}
+              {%- elif temp < 96 -%}
+                {%- set comment = " " ~ temp ~ " degrees. Almost there." -%}
+              {%- else -%}
+                {%- set comment = " " ~ temp ~ " degrees. It is effectively boiling." -%}
+              {%- endif -%}
+            {%- else -%}
+              {%- set comment = "" -%}
+            {%- endif -%}
+
+            {{ base ~ comment }}
 mode: single
 ```
 
