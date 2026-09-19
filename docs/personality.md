@@ -23,7 +23,7 @@ Many requests are the same few things — lights on/off, heating, timers — so 
 These are the commands for our WeeKett wifi kettle. Add it in the UI or paste the YAML. The trigger deliberately accepts the common STT mishears (`Boil|Oil`, `kettle|cattle`) we saw in the [STT quiz](stt.md):
 
 ```yaml
-alias: VIKI_ personality boil the kettle
+alias: VIKI_ personality - boil the kettle
 description: ''
 triggers:
   - trigger: conversation
@@ -76,7 +76,7 @@ Reads the weather plugin + outside temp and editorialises. (In Glasgow, "overcas
 
 ```yaml
 
-alias: voice good morning
+alias: VIKI_ personality - good morning
 description: ""
 triggers:
   - trigger: conversation
@@ -135,7 +135,7 @@ actions:
 ### Good night — kill the lights, sign off
 
 ```yaml
-alias: voice - good night
+alias: VIKI_ personality - good night
 triggers:
   - trigger: conversation
     command:
@@ -164,7 +164,7 @@ actions:
 ### "I love you" — VIKI_ remembers the coffee machine
 
 ```yaml
-alias: voice - I love you
+alias: VIKI_ personality - I love you
 triggers:
   - trigger: conversation
     command: (I) (love|like) you
@@ -184,6 +184,27 @@ actions:
         "Baka"
       ] -%}
       {{ responses | random }}
+mode: single
+```
+
+### "Food" — change the kitchen lights and a Japanese phrase
+
+```yaml
+alias: VIKI_ personality - Food
+triggers:
+  - trigger: conversation
+    command: food
+conditions: []
+actions:
+  - action: switch.turn_on
+    target:
+      entity_id: switch.kitchen_tablelight
+  - action: switch.turn_off
+    target:
+      entity_id:
+        - switch.kitchen_mainlight
+  - set_conversation_response: '[[ ˌitadˌakimˈas ]] [[,,]]'
+    enabled: true
 mode: single
 ```
 
