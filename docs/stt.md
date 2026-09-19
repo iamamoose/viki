@@ -6,11 +6,24 @@
 
 By default Home Assistant gives you phrase-to-text (fine on low-end hardware, but limited to token-named phrases) and speech-to-text. We want to talk to VIKI_ more freely, so it's speech-to-text.
 
-The default is faster-whisper in a container, with a choice of model. `tiny-int8` is the one recommended for a Pi 4; `base-int8` is more accurate and okay on a Pi 5.
+Local is where you should start. It's free, it's private, and it's what Home Assistant points you at out of the box.
 
-You can also pay for the Home Assistant cloud subscription, which is a Microsoft speech service covering both STT and TTS. Do we need it? Two things to check: accuracy, then speed.
+## Set up faster-whisper
 
-## Accuracy — the "what's that person saying?" quiz
+The Whisper add-on runs faster-whisper locally over Wyoming, and it's in the official add-on store — nothing to add, no account, no key.
+
+1. Settings → Add-ons → Add-on Store, install **Whisper**.
+2. In its configuration, set the model to `base-int8` and the language to `en-GB`.
+3. Start it. It should appear under Settings → Devices & Services → Wyoming Protocol on its own; add it there if it doesn't.
+4. Pick it as the Speech-to-Text engine in your voice pipeline.
+
+There's a choice of model. `tiny-int8` is the one recommended for a Pi 4; `base-int8` is more accurate and okay on a Pi 5. We use `base-int8`.
+
+That's the whole setup, and for a lot of people it's the end of the story. It wasn't for us — two things to check: accuracy, then speed.
+
+## Why we ended up on the cloud
+
+### Accuracy — the "what's that person saying?" quiz
 
 | Phrase | tiny-int8 | base-int8 | azure |
 |---|---|---|---|
@@ -18,9 +31,9 @@ You can also pay for the Home Assistant cloud subscription, which is a Microsoft
 | "Eleven minute timer" | ❌ A loving minute timer | ✅ 11 minute timer | ✅ 11 minute timer |
 | "Boil the kettle" | ❌ Oil the kettle | ❌ Boil the cattle | ✅ Boil the kettle |
 
-`tiny-int8` barely understands me, and doesn't get my Scottish wife at all. `base-int8` is closer but still trips on "boil the cattle". Azure gets it right. So the cloud's accurate. What about speed?
+`tiny-int8` barely understands me, and doesn't get my Scottish wife at all. `base-int8` is closer but still trips on "boil the cattle". Azure gets it right.
 
-## Benchmark — *"What is the bedroom temperature?"*
+### Benchmark — *"What is the bedroom temperature?"*
 
 | Engine | Time |
 |---|---:|
@@ -30,9 +43,11 @@ You can also pay for the Home Assistant cloud subscription, which is a Microsoft
 | i7-6700 (tiny-int8) | 0.6 s |
 | 🏆 **Microsoft / Azure STT** | **0.1 s** |
 
-`tiny-int8` is much faster than `base-int8`, as you'd expect, but we need `base` for accuracy unless we go cloud, and 1.7 s on a Pi 5 is annoying when it's on top of everything else the pipeline has to do. The cloud wins here too.
+`tiny-int8` is much faster than `base-int8`, as you'd expect, but we need `base` for accuracy unless we go cloud, and 1.7 s on a Pi 5 is annoying when it's on top of everything else the pipeline has to do.
 
-## Self-hosting Microsoft STT (no full HA Cloud subscription)
+So the cloud wins on both counts here. The trade is an internet connection and an Azure account, against better accuracy on regional accents and a response that comes back much quicker. If neither of those bothers you, stay local — you've already got it working.
+
+## Set up Azure instead
 
 You can run Azure Speech-to-Text as a Home Assistant add-on yourself, over the Wyoming protocol, without the rest of an HA Cloud subscription. I used hugobloem's Wyoming Microsoft STT:
 
