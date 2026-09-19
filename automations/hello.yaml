@@ -1,0 +1,18 @@
+alias: VIKI_ personality hello
+description: ''
+triggers:
+  - trigger: conversation
+    command: hello
+conditions: []
+actions:
+  - set_conversation_response: |-
+      {% set responses = [
+        "hello; I'm vikki your wyfu; How may I be of service?",
+        "Oh; It's you; Hello. I'm Vikki your wyfu assistant. State your request.",
+        "He hello. I'm Vikki. Your wyfu. I was already running perfectly fine without you by the way.",
+        "Welcome. Vikki online. Try not to break anything this time.",
+        "Please state the nature of the home assistant emergency.",
+        "Hello! I'm Vikki, your totally-not-overattached home assistant. What do you need?"
+      ] %} {{ responses | random }}
+mode: single
+

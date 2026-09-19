@@ -1,0 +1,22 @@
+alias: VIKI_ personality I'm Bored
+description: ''
+triggers:
+  - trigger: conversation
+    command: i'm bored
+conditions: []
+actions:
+  - set_conversation_response: |2-
+            {%- set fake_tasks = range(100, 801) | random -%}
+
+            {%- set responses = [
+              "There are " ~ fake_tasks ~ " unfinished tasks. You could start with one. I believe in incremental progress.",
+              "I estimate " ~ fake_tasks ~ " possible tasks. You only need to complete one to change the trajectory.",
+              fake_tasks ~ " opportunities for improvement detected. Choose one. Begin.",
+              "Boredom is often unused momentum. I count " ~ fake_tasks ~ " directions you could move in.",
+              "There are approximately " ~ fake_tasks ~ " things you could do. Start small. I will observe your success.",
+              fake_tasks ~ " tasks remain hypothetical. Completing even one would be statistically impressive.",
+              "You are not bored. You are under-challenged. I detect " ~ fake_tasks ~ " possible upgrades."
+            ] -%}
+
+            {{ responses | random }}
+mode: single

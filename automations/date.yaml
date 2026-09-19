@@ -1,0 +1,76 @@
+alias: VIKI_ personality What Date Is it?
+description: ''
+triggers:
+  - trigger: conversation
+    command:
+      - what  (day|date) is it
+      - (what|what's) [is] [the] (date|day)
+conditions: []
+actions:
+  - set_conversation_response: |2
+            {%- set today = now() -%}
+            {%- set day = today.day -%}
+            {%- set weekday = today.strftime("%A") -%}
+
+            {# ordinal suffix #}
+            {%- if day in [1,21,31] -%}
+              {%- set suffix = "st" -%}
+            {%- elif day in [2,22] -%}
+              {%- set suffix = "nd" -%}
+            {%- elif day in [3,23] -%}
+              {%- set suffix = "rd" -%}
+            {%- else -%}
+              {%- set suffix = "th" -%}
+            {%- endif -%}
+
+            {%- set date_str = weekday ~
+               " the " ~ day ~ suffix ~
+               " of " ~ today.strftime("%B %Y") -%}
+
+            {# tails #}
+            {%- set normal_tails = [
+              "Make the most of it.",
+              "I trust this matters to you.",
+              "You’re welcome. Naturally.",
+              "Just keeping you informed.",
+              "Another step forward.",
+              "Consider it handled.",
+              "Everything’s on track.",
+              "You’re doing fine."
+            ] -%}
+
+            {%- set monday_tails = [
+              "Yes, it’s Monday. You’re ready for it.",
+              "Monday again. Let’s make it a good one.",
+              "It’s Monday. A fresh start.",
+              "Monday. I expect you’ll handle it well.",
+              "It’s Monday. One step at a time.",
+              "Monday has begun. Let’s get moving.",
+              "A new Monday. Plenty of opportunities.",
+              "Monday. I’m confident you’ll manage."
+            ] -%}
+
+            {%- set friday_tails = [
+              "It is Friday. Do not get reckless.",
+              "Friday. I suppose morale has improved.",
+              "It’s Friday. Try to act responsible.",
+              "Friday. I detected a slight increase in enthusiasm.",
+              "It is Friday. I will allow mild optimism."
+            ] -%}
+
+            {%- if weekday == "Monday" -%}
+              {%- set tail = monday_tails | random -%}
+            {%- elif weekday == "Friday" -%}
+              {%- set tail = friday_tails | random -%}
+            {%- else -%}
+              {%- set tail = normal_tails | random -%}
+            {%- endif -%}
+
+            {%- set responses = [
+              "It is " ~ date_str ~ ". " ~ tail,
+              "Today is " ~ date_str ~ ". " ~ tail,
+              date_str ~ ". " ~ tail
+            ] -%}
+
+            {{ responses | random }}
+mode: single

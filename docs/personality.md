@@ -211,6 +211,22 @@ actions:
 mode: single
 ```
 
+### The rest of them
+
+The same trick, more phrases. These are the ones she answers day to day —
+each is a complete automation, so create one in Home Assistant, switch to
+YAML and paste it in:
+
+| | She answers | |
+|---|---|---|
+| [`hello.yaml`](../automations/hello.yaml) | "hello" | introduces herself, reluctantly |
+| [`home.yaml`](../automations/home.yaml) | "I'm home" | notes your return without fuss |
+| [`bored.yaml`](../automations/bored.yaml) | "I'm bored" | invents a number of unfinished tasks |
+| [`time.yaml`](../automations/time.yaml) | "what time is it" | proper "quarter past", with commentary |
+| [`date.yaml`](../automations/date.yaml) | "what date is it" | and a different remark on Mondays and Fridays |
+
+None of them need any particular hardware, so they work as-is. 
+
 ## Non-conversational notifications
 
 VIKI_ can also ping devices unprompted. Notifications usually want a sound at the start (like the wake `mhm`) — here we use a saved `hey.wav` media source as a "Hey!" preannounce.

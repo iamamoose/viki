@@ -1,0 +1,19 @@
+alias: VIKI_ personality I'm Home
+description: ''
+triggers:
+  - trigger: conversation
+    command: i'm home
+conditions: []
+actions:
+  - set_conversation_response: |2
+            {%- set responses = [
+              "You are home. I am aware.",
+              "Welcome back. Everything remains operational.",
+              "Home confirmed. I maintained order in your absence.",
+              "You have returned. As expected.",
+              "Good. You are home."
+            ] -%}
+
+            {{ responses | random }}
+mode: single
+

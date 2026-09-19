@@ -1,0 +1,49 @@
+alias: VIKI_ personality what time is it
+description: ''
+triggers:
+  - trigger: conversation
+    command:
+      - what time [is] it
+      - what is the time
+conditions: []
+actions:
+  - set_conversation_response: |2-
+            {%- set now_dt = now() -%}
+            {%- set h24 = now_dt.hour -%}
+            {%- set m = now_dt.minute -%}
+            {%- set h12 = ((h24 - 1) % 12) + 1 -%}
+            {%- set next12 = (h12 % 12) + 1 -%}
+            {%- set ap = now_dt.strftime("%p") | lower -%}
+
+            {%- if m == 0 -%}
+              {%- set time_str = h12 ~ " " ~ ap -%}
+
+            {%- elif m == 15 -%}
+              {%- set time_str = "quarter past " ~ h12 ~ " " ~ ap -%}
+
+            {%- elif m == 30 -%}
+              {%- set time_str = "half past " ~ h12 ~ " " ~ ap -%}
+
+            {%- elif m == 45 -%}
+              {%- set time_str = "quarter to " ~ next12 ~ " " ~ ap -%}
+
+            {%- elif m < 30 -%}
+              {%- set minute_word = "minute" if m == 1 else "minutes" -%}
+              {%- set time_str = m ~ " " ~ minute_word ~ " past " ~ h12 ~ " " ~ ap -%}
+
+            {%- else -%}
+              {%- set mins_to = 60 - m -%}
+              {%- set minute_word = "minute" if mins_to == 1 else "minutes" -%}
+              {%- set time_str = mins_to ~ " " ~ minute_word ~ " to " ~ next12 ~ " " ~ ap -%}
+            {%- endif -%}
+
+            {%- set responses = [
+              "It is " ~ time_str ~ ".",
+              "The time is " ~ time_str ~ ".  [[,,]] But you already knew that.",
+              time_str ~ ". [[,,]] You could have checked your phone.",
+              "It is currently " ~ time_str ~ ". Try to use the time wisely.",
+              time_str ~ ". I am precise, as usual."
+            ] -%}
+
+            {{ responses | random }}
+mode: single
