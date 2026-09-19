@@ -16,7 +16,7 @@ each one with something better (or at least funnier). Each stage has
 its own section:
 
 1. [Wake word](docs/wakeword.md): Use our "Hey VIKI!" locally, or create your own.
-2. [Speech to text](docs/stt.md): Run faster-whisper locally, or use Azure STT (free!) for better accuracy on regional dialects.
+2. [Speech to text](docs/stt.md): Run faster-whisper locally, or use Azure STT (free!) for better speed and accuracy.
 3. [Processing & personality](docs/personality.md): A mixture of automations and optional Gemini LLM
 4. [Text to speech](docs/voice.md): Use our custom anime voice with Piper locally, or create your own.
 
