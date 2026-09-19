@@ -325,13 +325,8 @@ Cost: I set a £5/month cap; in practice it lands around £1–2/month (3 months
 
 ![Google AI Studio API cost](./images/cost-graph.png)
 
-Before my free credits ran out (late May) it cost nothing; with the £5/month cap set as a safety net, real spend has stayed around a quid or two.
-
-## Links
-
-| What | Where |
-|---|---|
-| MekaHime (fully-local companion rig) | <https://www.youtube.com/@MekaHime> |
+Before my free credits ran out (late May) it cost nothing; with the £5/month cap set as a safety net, real spend has stayed around a quid or two a month. As
+of September 2026 you now need to prepay a small balance.
 
 ---
 
