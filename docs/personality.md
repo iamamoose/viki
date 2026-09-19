@@ -189,6 +189,9 @@ mode: single
 
 ### "Food" — change the kitchen lights and a Japanese phrase
 
+We can put raw phonemes in double square brackets and approximate
+the Japanese pronunciation of 'itadakimasu'.
+
 ```yaml
 alias: VIKI_ personality - Food
 triggers:
